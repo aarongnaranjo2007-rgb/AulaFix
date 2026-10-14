@@ -1,62 +1,46 @@
-# PlayNext — Definición del problema
+# KUBO — Detección del problema (Fase 1)
 
-## Introducción
+KUBO es una app que te dice *cuánto puedes gastar esta semana sin dejar de ahorrar*. No se conecta a tu banco y no te pide apuntar cada gasto: introduces tus ingresos, tus gastos fijos y cuánto quiere ahorrar este mes, y KUBO te devuelve un solo número para toda la semana.
 
-PlayNext es una aplicación web que ayuda a los jugadores a decidir a qué videojuego jugar según su situación actual. El usuario puede buscar por título, explorar un catálogo o recibir una recomendación adaptada a si va a jugar solo o con amigos, al número de jugadores, la plataforma, el género y el tiempo disponible.
+La idea nace de una situación muy habitual: llega el fin de semana, quieres salir a cenar, comprobar si puedes comprarte algo o hacer un plan, y para saber si puedes permitírtelo acabas abriendo la app del banco y haciendo cuentas mentales entre la compra, el ocio y las facturas. Muchas veces ni así lo tienes claro, y al final gastas a ojo o directamente te privas por si acaso.
 
-La propuesta nace de una situación habitual: disponer de demasiados juegos y, aun así, no conseguir decidir cuál iniciar. El problema se agrava cuando un grupo de amigos quiere jugar junto, porque deben coincidir en gustos, plataformas, juegos disponibles y número de jugadores compatibles.
+Cuando llega un imprevisto —la luz viene más cara, una avería, un gasto que no tocaba— hoy se paga quitándole dinero a otras facturas o tirando de tarjeta, y el ahorro del mes se evapora sin que lo vieras venir.
 
 ---
 
-## 1. Necesidad detectada
+## 1. La necesidad
 
-### Problema
+### El problema
 
-Los jugadores con bibliotecas digitales amplias sufren **sobrecarga de elección**: poseen muchos videojuegos, pero no saben cuál jugar en un momento concreto. Cuando juegan solos, la indecisión les hace invertir demasiado tiempo navegando por Steam o Epic Games, volver a títulos conocidos o abandonar la decisión sin jugar.
+La gente no sabe *cuánto puede gastar cada semana sin cargarse el ahorro, y cuando llega un imprevisto (una factura que viene más cara, una avería), **se lo come el ahorro sin darse cuenta*. A final de mes, el ahorro es lo que sobra, si sobra algo.
 
-En grupos, el problema incorpora más restricciones: los participantes pueden tener preferencias distintas, no compartir los mismos juegos y necesitar un título compatible con el número de personas conectadas.
+Dos consecuencias concretas:
+
+- *El gasto variable es un vacío.* El dinero de la compra, el ocio y el transporte se escapa sin medida; no hay un número que diga "esto es lo que puedes gastar esta semana".
+- *Los imprevistos no tienen red.* Hoy se pagan quitándole dinero a otras facturas o tirando de tarjeta, y el ahorro del mes desaparece.
 
 ### ¿A quién afecta?
 
-El problema afecta principalmente a jugadores habituales de PC, especialmente a quienes utilizan Steam como launcher principal y tienen una biblioteca digital de tamaño medio o grande. También afecta a grupos que se conectan por Discord para jugar juntos.
-
-El cuestionario propio reunió 13 respuestas de jugadores de entre 18 y 26 años. Steam aparece en las 13 respuestas como launcher habitual; algunas personas también mencionaron Epic Games y EA.
+A personas con ingresos ajustados que quieren ahorrar pero no pueden dedicarle tiempo a las cuentas cada día. El gesto más frecuente: mirar la cuenta bancaria para comprobar cuánto queda, varias veces por semana.
 
 ### Frecuencia
 
-El problema es frecuente porque 12 de las 13 personas encuestadas afirmaron jugar diariamente o casi todos los días. En las respuestas sobre el tiempo dedicado a decidir, la cifra más repetida fue entre 20 y 30 minutos; algunas personas indicaron una hora o incluso más.
+En nuestras entrevistas, las tres personas consultadas revisan su situación económica *cada día o cada pocos días* (una a diario, otra cada dos días, otra "depende de lo que tenga que pagar"). El imprevisto que rompe el mes: al menos uno cada 2-3 meses.
 
 ### Impacto
 
-La indecisión reduce el tiempo real de juego y causa frustración. Las consecuencias identificadas son:
+- *Económico:* el objetivo de ahorro se pierde una o dos veces al año por un desvío pequeño.
+- *Emocional:* ansiedad de no saber si vas a llegar a fin de mes; la revisión de la cuenta se convierte en un hábito de comprobación que no tranquiliza. Una persona entrevistada lo resume así: "Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiero saber".
 
-- Los usuarios terminan jugando a los mismos pocos títulos.
-- Algunos jugadores dejan de jugar porque no encuentran una opción que les convenza.
-- Los grupos permanecen en una llamada sin jugar o cada persona termina jugando por separado.
-- Los usuarios sienten que no aprovechan los juegos que ya han comprado.
+### Evidencias
 
-### Evidencias propias
+*Entrevistas propias (3):* personas reales de nuestro entorno, con permiso para usar sus datos y citas:
 
-Se realizó un cuestionario titulado “¿Qué juego elijo hoy? - Investigación de usuarios”, con 13 respuestas.
+> "Verificando los gastos en la aplicación del banco diariamente, no llevo unas cuentas exactas." — Elisa, 25 a. Mira el banco cada día para tranquilizarse, pero no lleva cuentas exactas.
 
-Algunas respuestas representativas fueron:
+> "Como a veces me escriben para los gastos del veterinario, otras veces los gatos comen más, no llevo un control exhaustivo." — Clara, 24 a. Dejó de llevar cuentas porque los gastos imprevistos de sus gatos rompían su sistema.
 
-> “Nos entra ganas de jugar a algo nuevo juntos, empezamos a ver opciones durante 30 minutos y al final acabamos jugando a lo mismo de siempre.”
-
-> “La cantidad que tengo hace que tenga demasiadas opciones y muchas veces con la disparidad entre ellos no me decido y acabo haciendo otra cosa.”
-
-> “No coincidimos en juegos comprados o en gustos/apetito. Algunas veces acabamos jugando a los mismos de siempre o directamente nos quedamos en vc sin jugar juntos.”
-
-> “Que teniendo gran variedad no juego la mitad.”
-
-Además, un participante propuso que el producto tuviera un selector de número de jugadores para evitar recomendaciones incompatibles con el grupo:
-
-> “Ponerle el número de jugadores porque, por ejemplo, no te vaya a coger el Split Fiction si sois 26.”
-
-Estas respuestas validan que la aplicación no debe recomendar únicamente por género: debe tener en cuenta el contexto de juego, especialmente el modo individual o grupal, la plataforma y el número de jugadores.
-
----
-
+> *Lo que más pereza me da es introducir los gastos. Llevo el Excel al día, pero es una rutina monótona y pesada; me gustaría algo más visual, con gráficos claros y donde sea muy fácil verificar en qué se va el dinero de un vistazo.
 ## 2. Usuarios objetivo
 
 Las personas usuarias objetivo se han definido a partir del cuestionario realizado a jugadores habituales. Se han creado dos perfiles con situaciones de uso diferentes: una persona que utiliza la aplicación principalmente para decidir qué jugar sola y otra que la utiliza para encontrar un juego compatible con un grupo.
