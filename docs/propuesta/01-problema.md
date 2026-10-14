@@ -42,108 +42,235 @@ En nuestras entrevistas, las tres personas consultadas revisan su situación eco
 
 > *Lo que más pereza me da es introducir los gastos. Llevo el Excel al día, pero es una rutina monótona y pesada; me gustaría algo más visual, con gráficos claros y donde sea muy fácil verificar en qué se va el dinero de un vistazo.
 
-## 2. Usuarios objetivo
+## 2. Las personas
 
-Las personas usuarias objetivo se han definido a partir del cuestionario realizado a jugadores habituales. Se han creado dos perfiles con situaciones de uso diferentes: una persona que utiliza la aplicación principalmente para decidir qué jugar sola y otra que la utiliza para encontrar un juego compatible con un grupo.
-
-### User persona 1 — Alex Morales
-
-> Persona basada en un usuario real entrevistado. Se utiliza un nombre ficticio para preservar su privacidad.
-
-| Campo | Descripción |
-|---|---|
-| Edad | 22 años |
-| Ocupación | Frigorista |
-| Ubicación | Estepona |
-| Dispositivo principal | PC gaming |
-| Launcher habitual | Steam |
-| Frecuencia de juego | Juega habitualmente, principalmente por las tardes y noches |
-| Contexto de uso | Juega principalmente solo; de forma ocasional juega con amigos mediante Discord |
-
-> “Tengo un montón de juegos, pero no sé a qué jugar y al final acabo entrando en lo mismo de siempre.”
-
-#### Necesidades
-
-- Elegir un juego individual en pocos minutos, sin tener que investigar durante mucho tiempo.
-- Encontrar juegos que encajen con su estado de ánimo, género preferido y tiempo libre disponible.
-- Descubrir títulos de su biblioteca que había olvidado o dejado sin terminar.
-- Saber rápidamente si un juego requiere partidas cortas o una sesión más larga.
-- Usar la aplicación sin tener que registrarse, instalar programas adicionales ni conceder permisos innecesarios.
-
-#### Frustraciones
-
-- Tiene demasiados juegos y la cantidad de opciones le genera indecisión.
-- Pierde tiempo revisando Steam sin llegar a iniciar ningún juego.
-- Acaba jugando siempre a los mismos títulos por ser una elección segura.
-- Las recomendaciones generales no tienen en cuenta qué le apetece jugar ese día.
-- Puede aburrirse rápidamente si el juego elegido no encaja con el tiempo o la experiencia que busca.
-- Desconfía de conectar su cuenta si la aplicación solicita acceso excesivo a sus datos.
-
-#### Objetivos
-
-- Decidir a qué jugar en menos de cinco minutos.
-- Aprovechar mejor los juegos que ya posee y descubrir otros que le puedan interesar.
-- Dedicar su tiempo libre a jugar, no a buscar o comparar opciones.
-- Tener una recomendación clara y explicada, con posibilidad de pedir otra alternativa.
-
-#### Casos de uso principales
-
-1. Alex llega a casa, abre la aplicación y selecciona `Jugar solo`.
-2. Indica el género que le apetece, la plataforma y el tiempo que tiene disponible.
-3. Pulsa el botón `Sorpréndeme` para recibir una recomendación.
-4. Consulta la portada, la valoración, el tiempo estimado de sesión y el motivo de la recomendación.
-5. Guarda el juego en favoritos, lo descarta o pide otra opción.
-6. Abre la ficha del juego y utiliza el enlace para buscarlo en Steam.
+Tres personas reales de nuestro entorno, con roles distintos frente a la aplicación. Cada una justifica una parte del producto.
 
 ---
 
-### User persona 2 — Laura Torres
+### User persona 1 — Elisa Lucena 
 
-> Persona secundaria construida a partir de patrones observados en el cuestionario de usuarios.
+> "Verificando los gastos en la aplicación del banco diariamente, no llevo unas cuentas exactas."
 
-| Campo | Descripción |
+| Campo | Dato |
 |---|---|
-| Edad | 20 años |
-| Ocupación | Estudiante |
-| Dispositivo principal | PC gaming y móvil |
-| Launchers habituales | Steam y Epic Games |
-| Frecuencia de juego | Juega varias veces por semana |
-| Contexto de uso | Se conecta por Discord con un grupo variable de entre 3 y 6 amistades |
-
-> “Si somos varios, quiero que me diga juegos que podamos jugar todos; no uno para cuatro cuando estamos seis en Discord.”
+| Edad | 25 años |
+| Ocupación | Integradora social |
+| Ubicación | San Fernando |
+| Dispositivo | Móvil iPhone |
+| Conectividad | WiFi |
+| Momento de uso | Noches, en casa, en el sofá |
+| Contexto | Revisa la app del banco a diario para comprobar que no se ha pasado |
 
 #### Necesidades
 
-- Encontrar juegos compatibles con todas las personas conectadas.
-- Indicar cuántas personas van a jugar antes de recibir una recomendación.
-- Filtrar por modo cooperativo o competitivo, género y plataforma.
-- Evitar propuestas que no admitan al número de jugadores del grupo.
-- Decidir rápido para empezar a jugar en lugar de debatir durante media hora.
+- Saber en 5 segundos cuánto le queda este mes sin abrir la app del banco y recorrer apuntes.
+- Llegar a fin de mes sin descubrir que se ha pasado de gasto cuando ya es tarde.
+- Ahorrar lo que le sobra sin quedarse corta para las facturas del mes siguiente.
 
 #### Frustraciones
 
-- Sus amistades no siempre tienen comprados los mismos juegos.
-- Las recomendaciones genéricas no indican claramente el número máximo de jugadores.
-- Los gustos del grupo no siempre coinciden.
-- Tras debatir durante demasiado tiempo, el grupo termina jugando siempre a los mismos títulos o cada persona juega por separado.
-- No quiere iniciar sesión ni dar permisos a Steam/Epic si la aplicación no explica claramente qué información usará.
+- Se da cuenta de que gastó de más cuando el mes ya se le ha acabado: "lo averiguo viendo que había gastado más de lo normal, calculándolo con la calculadora".
+- Va "de cabeza": la cuenta de cuánto le queda vive en la memoria, no en un número fiable.
+- Los gastos imprevistos se los paga quitándole dinero a las facturas: "de los mismos gastos con los que paga las facturas".
+- Tiene que abrir la app del banco a diario para sentir que controla su dinero.
 
 #### Objetivos
 
-- Encontrar una opción viable para todo el grupo en pocos minutos.
-- Evitar discusiones y reducir el tiempo que tardan en decidir.
-- Descubrir opciones nuevas, no repetir siempre los mismos juegos.
-- Conocer de un vistazo si un juego es cooperativo, competitivo, compatible con el grupo y está disponible en la plataforma elegida.
+- Decidir si puede gastarse algo en 5 segundos, sin abrir el banco.
+- Llegar a fin de mes sin sorpresas.
+- Ahorrar de forma constante sin esfuerzo diario.
 
-#### Casos de uso principales
+#### Casos de uso
 
-1. Laura está en una llamada de Discord con cuatro amistades y abre la aplicación.
-2. Selecciona `Jugar con amigos`.
-3. Indica que son cinco jugadores.
-4. Marca `Competitivo` o `Cooperativo`, selecciona un género y elige `PC / Steam`.
-5. Pulsa `Elegir por el grupo`.
-6. Revisa recomendaciones compatibles con cinco jugadores.
-7. El grupo abre los detalles del juego, guarda una opción o pide otra recomendación.
+1. Abre la app por la noche y ve su número semanal en 5 segundos.
+2. Antes de comprar, consulta si está dentro de su ritmo.
+3. Al final de mes, recibe un resumen: lo que ahorró, lo que gastó de más y por qué.
+
+---
+
+### User persona 2 — Clara Romero
+
+> "Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiero saber."
+
+| Campo | Dato |
+|---|---|
+| Edad | 24 años |
+| Ocupación | Dependienta |
+| Ubicación | San Fernando |
+| Dispositivo | Móvil iPhone |
+| Conectividad | WiFi |
+| Momento de uso | Fuera de casa, justo antes de hacer una compra |
+| Contexto | Vive al día; evita mirar sus números porque le generan ansiedad |
+
+#### Necesidades
+
+- Poder comprarse algo sin tener que hacer cuentas angustiosas antes.
+- Que los gastos de sus gatos (comida, veterinario) no arruinen el mes.
+- Permitirse sus caprichos sin culpa.
+
+#### Frustraciones
+
+- Se quedó sin dinero antes de cobrar el mes pasado.
+- Dejó de llevar cuentas porque lo variable se lo desbarataba: "no llevo un control exhaustivo".
+- Evita mirar sus números: "no sé lo que me queda... y tampoco lo quiero saber".
+- Termina cada mes sin margen para sus cosas.
+
+#### Objetivos
+
+- Saber antes de comprar si se lo puede permitir.
+- Llegar a fin de mes con el ahorro intacto.
+- Que la app le diga cuándo puede darse un capricho.
+
+#### Casos de uso
+
+1. Va a comprar y consulta su número semanal antes de pagar.
+2. Registra un gasto de 2 toques cuando algo se sale de lo previsto.
+3. Recibe un aviso cuando un imprevisto supera su colchón y decide de dónde sacar el dinero.
+
+---
+
+### User persona 3 (Modo Detalle) — Flor Comesaña
+
+> "Lo que más pereza me da es introducir los gastos."
+
+| Campo | Dato |
+|---|---|
+| Edad | 55 años |
+| Ocupación | Autónoma |
+| Ubicación | San Fernando |
+| Dispositivo | Portátil |
+| Conectividad | WiFi |
+| Momento de uso | En casa, en el escritorio, a mediodía |
+| Contexto | Lleva sus cuentas en un Excel; quiere entender en qué se va el dinero |
+
+#### Necesidades
+
+- Ver en qué se le fue el mes sin tener que revisar el Excel celda a celda.
+- Dedicar menos tiempo a apuntar gastos y más a decidir qué hacer con ellos.
+- Que el control que ya tiene le sirva también para llegar a fin de mes con margen.
+
+#### Frustraciones
+
+- La parte que más le cuesta es el apuntado: "introducir los gastos".
+- Para encontrar un gasto concreto tiene que recorrer la hoja entera.
+- Lleva las cuentas al detalle y aun así el día 27 solo le quedan 40 €: controla, pero sin margen.
+
+#### Objetivos
+
+- Saber en qué se gastó el mes en un vistazo.
+- Reducir el tiempo dedicado a apuntar.
+- Llegar a fin de mes con margen, no solo con control.
+
+#### Casos de uso
+
+1. Importa su extracto bancario en CSV una vez al mes y la app lo reparte entre categorías.
+2. Revisa una tabla de movimientos y gráficas por categoría en el portátil.
+3. Ajusta su previsión de gastos recurrentes (luz, gasolina) cuando ve desvíos.
+
+# Guion de la Entrevista: ¿Cómo llevas el control de tu dinero, si es que lo llevas?
+
+### Perfil A — Quien NO lleva sus cuentas
+* ¿Sabes ahora mismo cuánto te queda para gastar este mes?
+* ¿Cuánto crees que te queda esta semana?
+* ¿Has intentado alguna vez llevar tus cuentas? ¿Qué pasó?
+* ¿Cuándo fue la última vez que te quedaste sin dinero antes del día de cobro?
+* ¿De dónde sacaste el dinero la última vez que tuviste un gasto que no esperabas?
+* Si te sobran 100 € al final de mes, ¿qué haces con ellos?
+
+### Perfil B — Quien SÍ lleva sus cuentas
+* ¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)
+* ¿Qué parte de eso te da más pereza?
+* ¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?
+* ¿Cuánto crees que te queda ahora mismo este mes?
+
+---
+
+# Resultados de las Entrevistas
+
+## 1. Elisa Lucena Urbano
+* **Edad:** 25 años
+* **Perfil:** Tipo B
+
+**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
+Metiéndose en la cuenta del banco y mirándolo.
+
+**¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)**
+De cabeza, verificando los gastos en la aplicación del banco diariamente; no lleva unas cuentas exactas.
+
+**¿Qué parte de eso te da más pereza?**
+Nada.
+
+**¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?**
+Sí lo ha mirado. Lo averiguó viendo que había gastado más de lo normal, calculándolo con la calculadora.
+
+**¿Cuánto crees que te queda ahora mismo este mes?**
+450 € desde primero de mes.
+
+**Esos 450 € que me dices: ¿incluyen lo que ya sabes que vas a pagar este mes (alquiler, luz, facturas) o es lo que ves en la cuenta?**
+Sí incluye lo que va a pagar este mes ese dinero.
+
+**La última vez que tuviste un gasto que no esperabas (una factura más alta, un regalo, una reparación), ¿de dónde sacaste el dinero?**
+De la propia cuenta, de los mismos fondos con los que paga las facturas.
+
+**Si te sobran 100 € al final de mes, ¿qué haces con ellos?**
+Se guardan y se ahorran.
+
+**¿Hay algo de tu dinero que te quite la cabeza y de lo que no te haya preguntado?**
+No sabe / no entiende la pregunta.
+
+---
+
+## 2. Clara Romero
+* **Edad:** 24 años
+* **Ocupación:** Dependienta
+* **Perfil:** Tipo A
+
+**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
+Depende de lo que tenga que pagar ese mes.
+
+**¿Sabes ahora mismo cuánto te queda para gastar este mes?**
+Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiere saber.
+
+**¿Cuánto crees que te queda esta semana?**
+No sé cuánto me queda, voy un poco al día.
+
+**¿Has intentado alguna vez llevar tus cuentas? ¿Qué pasó?**
+He intentado llevar un control, pero como a veces me escriben para los gastos del veterinario, y otras veces los gatos comen más o tengo que comprar comida para ellos, no llevo un control exhaustivo.
+
+**¿Cuándo fue la última vez que te quedaste sin dinero antes del día de cobro?**
+Pues sí, el mes pasado.
+
+**¿De dónde sacaste el dinero la última vez que tuviste un gasto que no esperabas?**
+Tengo una cuenta de ahorro en la que había un dinero y cada vez que necesito lo saco de ahí; es para gastos extraordinarios.
+
+**Si te sobran 100 € al final de mes, ¿qué haces con ellos?**
+Pues seguramente me dé un capricho, que me doy pocos.
+
+---
+
+## 3. Flor Comesaña
+* **Edad:** 55 años
+* **Ocupación:** Autónoma
+* **Perfil:** Tipo B
+
+**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
+Lo llevo con un Excel; cada dos días agrego los movimientos.
+
+**¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)**
+Con un Excel.
+
+**¿Qué parte de eso te da más pereza?**
+Introducir los gastos.
+
+**¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?**
+Sí, revisando el Excel uno por uno hasta que di con los gastos.
+
+**¿Cuánto crees que te queda ahora mismo este mes?**
+40 € estando a día 27 de septiembre.
+
+**¿Dónde y cuándo suele mirar las cosas del banco o gastar?**
+En el portátil, en el escritorio a mediodía.
 
 ---
 
