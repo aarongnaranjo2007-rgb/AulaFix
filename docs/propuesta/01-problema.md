@@ -274,81 +274,149 @@ En el portátil, en el escritorio a mediodía.
 
 ---
 
-## 3. Análisis de competencia
-### Competidor 1 — Steam (Valve Corporation)
-* **Enlace oficial:** [store.steampowered.com](https://store.steampowered.com/)
+## 3. La competencia
 
-#### Fortalezas
-- Es la tienda digital de PC con el catálogo más masivo y activo del mercado.
-- Integra reseñas de usuarios, etiquetas comunitarias (*user tags*), lista de amigos y el sistema *Steam Labs*.
-- Máxima adopción: 100% de presencia entre los usuarios de nuestro cuestionario.
-
-#### Debilidades
-- **Sobrecarga de elección:** Su interfaz prioriza la venta comercial sobre la recomendación contextual inmediata.
-- No resuelve la pregunta directa: *«¿A qué jugamos las personas conectadas en llamada de Discord ahora mismo?»*.
-- El buscador no permite filtrar de forma ágil combinando número exacto de integrantes con tiempo de sesión disponible y compatibilidad simultánea.
-
-#### Reseñas reales y quejas de 1 estrella (Trustpilot / Foros de Steam Community)
-> ⭐☆☆☆☆ *"El sistema de recomendación es horrible. Tengo cientos de juegos en mi biblioteca y siempre me sugiere lo mismo o juegos que no tienen nada que ver con lo que busco. La biblioteca se vuelve inmanejable cuando acumulas títulos."* — Usuario en Trustpilot.
->
-> ⭐☆☆☆☆ *"Steam no ayuda a elegir. Pasamos más de media hora mirando la tienda o la lista de amigos para ver qué podemos jugar juntos y casi nunca encontramos filtros útiles por número exacto de integrantes."* — Crítica en Steam Community Discussions.
-
-**Oportunidad para PlayNext:** Brindar una interfaz ligera, sin sobrecarga comercial, capaz de recomendar con un solo clic según el contexto exacto (solitario o grupo de N personas).
+Seis soluciones existentes. Ninguna resuelve nuestro problema.
 
 ---
 
-### Competidor 2 — HowLongToBeat (IGN Entertainment)
-* **Enlace oficial:** [howlongtobeat.com](https://howlongtobeat.com/)
+### Competidor 1 — Goodbudget
 
-#### Fortalezas
-- Base de datos de referencia mundial sobre estimación de duración de videojuegos (historia principal, extras y completista).
-- Datos recopilados de partidas reales aportados por la comunidad.
-- Imprescindible para jugadores que buscan títulos adaptados a su tiempo disponible.
+**Qué hace:** reproduce el método de los sobres en digital.
 
-#### Debilidades
-- Está concebida como un buscador de consulta pasiva, no como un asistente de recomendación activa.
-- Requiere que el usuario ya tenga en mente el título del videojuego para buscarlo.
-- Carece de filtros orientados a multijugador grupal, tamaño del grupo o compatibilidad cruzada.
+**Fortalezas:** método claro, sin banco, multi-dispositivo, versión web.
 
-#### Reseñas reales y quejas de 1 estrella (Foros Reddit r/patientgamers / Web)
-> ⭐☆☆☆☆ *"La web es genial si ya sabes a qué quieres jugar, pero no sirve de nada si estás bloqueado mirando la pantalla sin saber qué empezar. Le falta un recomendador inteligente que use su base de datos de horas."* — Usuario en Reddit r/patientgamers.
->
-> ⭐☆☆☆☆ *"La interfaz de búsqueda es tosca y no tiene ninguna herramienta para grupos o para descubrir juegos nuevos por tiempo disponible sin tener que tragarse listas infinitas."* — Reseña en foros web.
+**Debilidades:**
 
-**Oportunidad para PlayNext:** Emplear la métrica de tiempo de sesión (partidas cortas vs. largas) como un filtro selector directo en el motor de recomendación, ahorrando la búsqueda manual.
+> *"¡Se han borrado todos mis sobres al actualizar la aplicación!"* — App Store, reseña de 1 estrella → [Goodbudget, reseñas de App Store](https://apps.apple.com/us/app/goodbudget-budget-planner/id471112395?see-all=reviews)
+
+> *"Llevo años usando esta aplicación y producto. En algún momento de los últimos 2 o 3 años, arruinaron el proceso de conciliación. Indicaron que implementaron una función que algunos usuarios querían y que está causando esto. Me llevó horas y horas descubrir qué demonios estaba pasando con mi banco... Debido a que GB arruinó el proceso normal de conciliación y descarga de transacciones \"liquidadas\". Mi banco estaba estafando a los clientes ocultando depósitos y reembolsos en los extractos y descargas. Con una conciliación adecuada, que finalmente tuve que hacer MANUALMENTE con más de 8 meses de datos para descubrir dónde se estaban introduciendo los errores. Nunca confíes en un banco, y nunca confíes en un proceso de conciliación defectuoso. Ya no soy usuario..."* — App Store, reseña de 1 estrella → [Goodbudget, reseñas de App Store](https://apps.apple.com/us/app/goodbudget-budget-planner/id471112395?see-all=reviews&platform=iphone)
+
+**Lo que hace bien y nosotros repetimos:** la idea de los sobres (topes por categoría).
+
+**Lo que nosotros mejoramos:** no exigir una conciliación manual ni el registro diario de cada gasto; el registro es opcional.
 
 ---
 
-### Competidor 3 — RAWG Video Games Database
-* **Enlace oficial:** [rawg.io](https://rawg.io/)
+### Competidor 2 — Monefy
 
-#### Fortalezas
-- Base de datos con más de 500.000 videojuegos y una API abierta muy documentada.
-- Clasificación limpia por plataformas, géneros, creadores y valoraciones medias.
-- Excelente estética visual para explorar fichas técnicas.
+**Qué hace:** registro rápido de gastos e ingresos, con categorías y gráficas.
 
-#### Debilidades
-- Funciona como una red social/catálogo de descubrimiento infinito, lo que fomenta aún más la parálisis por elección.
-- La información de multijugador es genérica (suele indicar solo si tiene o no multijugador, pero no el número exacto de jugadores soportados).
-- No cuenta con un recomendador de un solo clic adaptado al grupo.
+**Fortalezas:** apuntar es casi inmediato; diseño visual claro.
 
-#### Reseñas reales y quejas de 1 estrella (Google Play Store / Trustpilot)
-> ⭐☆☆☆☆ *"Es básicamente una Wikipedia de videojuegos. Entras para buscar una recomendación rápida y terminas scrolleando 40 minutos entre portadas sin decidirte por nada."* — Reseña en Google Play Store.
->
-> ⭐☆☆☆☆ *"Faltan datos clave para jugar con amigos. Pone 'multijugador' pero no te dice si admite 3, 4 o más personas hasta que lo investigas por fuera."* — Crítica en foros de videojuegos.
+**Debilidades:**
 
-**Oportunidad para PlayNext:** Colocar una capa de decisión guiada por encima del catálogo: número exacto de personas, filtro de modo cooperativo/competitivo y botón directo de decisión.
+> *"Ufff pésimo servicio. No te ayuda en nada, mezcla las cuentas, tiene apartados supuestamente útiles pero no sirven de nada porque al final del día tú mismo tienes que hacer el cuadre de todo. O sea, hacer las cuentas antes aparte, y luego pasarlas a Monefy, si es el caso, cuál es el chiste de tener la aplicación? Intenté reiniciarla varias veces, pero por alguna razón, continúa teniendo datos que nadie ha introducido, generando errores con tus cuentas de manera inevitable."* — App Store, reseña de 1 estrella → [Monefy, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.monefy.app.lite&hl=es)
+
+> *"Antes utilizaba esta aplicación e incluso compré la versión de pago. Ahora es prácticamente inútil si no pagas una suscripción; incluso un Excel es mejor."* — App Store, reseña de 1 estrella → [Monefy, reseñas de App Store](https://apps.apple.com/us/app/monefy-bills-money-tracker/id1212024409?see-all=reviews)
+
+La versión gratuita no se conecta al banco y, además, algunas reseñas describen errores en los datos y la necesidad de revisar las cuentas manualmente.
+
+**Lo que hace bien y nosotros repetimos:** la velocidad de registro (nosotros lo llevamos a 2 toques).
+
+**Lo que nosotros mejoramos:** KUBO calcula un ritmo semanal y prioriza el ahorro, sin obligar al usuario a cuadrar manualmente sus cuentas ni a pagar para utilizar la función principal.
 
 ---
 
-### Oportunidades identificadas para PlayNext
-- **Modo 'Sorpréndeme' (Un solo clic):** Para el jugador que no quiere configurar nada y busca romper el bucle de indecisión al instante.
-- **Selector de modo:** Separación clara y radical entre `Jugar solo` y `Jugar con amigos`.
-- **Filtro central por número de jugadores:** Eliminar de raíz la frustración de recomendar títulos que no cuadran con el grupo en llamada.
-- **Transparencia y explicabilidad:** Explicar con una frase por qué se recomienda ese título (*"Recomendado porque sois 4 personas, buscáis cooperativo y tenéis 45 minutos"*).
-- **Cero barreras de entrada:** Totalmente funcional sin registro, sin login obligatorio y sin pedir permisos intrusivos de cuentas de terceros.
-- **Función de descarte activo:** Si la opción no convence, pulsar 'Siguiente opción' sin que repita títulos ya rechazados en la sesión.
+### Competidor 3 — PocketGuard
 
+**Qué hace:** calcula lo disponible después de facturas y objetivos.
+
+**Fortalezas:** responde exactamente a "¿cuánto me queda?"; maneja objetivos de ahorro.
+
+**Debilidades:**
+
+> *"Pagué la suscripción anual y parecía funcionar de maravilla durante unos meses. Finalmente, después de muchas horas, logré configurar todo correctamente, pero ahora mi banco no actualiza los datos. Es la segunda vez que sucede. Me comuniqué con soporte y se disculparon, diciendo que su equipo técnico estaba trabajando en ello. Después de seis semanas, decidí eliminar la cuenta y empezar de cero; perdí todo mi trabajo. Y ahora ha vuelto a pasar. Dinero y tiempo perdidos... lo cual es un gran problema en esta situación económica, sobre todo cuando intento administrar mi presupuesto."* — App Store, reseña de 1 estrella → [PocketGuard, reseñas de App Store](https://apps.apple.com/us/app/pocketguard-budget-app/id949414211)
+
+La conexión al banco es un requisito y sus reseñas muestran que, cuando la sincronización falla, el usuario puede perder tiempo y trabajo registrado.
+
+**Lo que hace bien y nosotros repetimos:** la promesa de "un número disponible".
+
+**Lo que nosotros mejoramos:** no pedir credenciales bancarias ni depender de la sincronización del banco; el número se calcula con tres datos que el usuario introduce voluntariamente.
+
+---
+
+### Competidor 4 — Rata y Fina
+
+**Qué hace:** app de control de gastos con un tono directo y sincero. Su lema es *"La única que te dice la verdad"*.
+
+**Fortalezas:**
+- Tono diferenciador: *"Las apps de finanzas te tratan como si fueras de cristal. Fina no."*
+- Presente en App Store y Google Play.
+- Crecimiento rápido: de 5 a 201 valoraciones en pocos meses.
+
+**Debilidades:**
+- **Suscripción obligatoria** para todas las funciones: la versión gratuita solo permite registrar un gasto en una sola categoría.
+- Tiene una versión gratuita muy limitada y reserva la mayoría de funciones para la suscripción.
+- Su propuesta se apoya mucho en el tono y en la estética, pero no ofrece una alternativa gratuita completa.
+- El tono directo puede generar rechazo en usuarios que buscan algo más amable.
+
+> *"La aplicación es bonita y aparentemente útil, pero al principio no informa de que es de pago. Después del cuestionario obliga a pagar para poder usarla."* — App Store, reseña de 1 estrella → [Rata y Fina, reseñas de App Store](https://apps.apple.com/es/app/rata-y-fina-control-de-gastos/id6787686922?see-all=reviews)
+
+**Lo que nosotros mejoramos:** KUBO es gratis en su versión base y su tono es amable, no duro.
+
+---
+
+### Competidor 5 — YNAB (You Need A Budget)
+
+**Qué hace:** la app de presupuesto más conocida del mundo. Método de asignar cada euro a una categoría, con objetivos de ahorro.
+
+**Fortalezas:**
+- Marca enorme, comunidad activa, educación financiera integrada.
+- El ahorro es central: no gastar lo que no tienes.
+
+**Debilidades (reseñas reales de 1 estrella):**
+
+> *"La sincronización con el banco es extremadamente lenta y no se actualiza. A veces pasan días y todavía no muestra los importes correctos ni coincide con la cuenta bancaria. Tampoco es una aplicación fácil de usar."* — App Store, reseña de 1 estrella → [YNAB, reseñas de App Store](https://apps.apple.com/us/app/ynab/id1010865877?see-all=reviews)
+
+> *"No vale la pena, no hace más que lo que hace una hoja de Excel pero por 2.300 MXN al año... De hecho, en una hoja de cálculo puedes registrar cargos parcializados de una tarjeta de crédito; aquí no."* — Google Play, reseña de 1 estrella → [YNAB, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.youneedabudget.evergreen.app&hl=es)
+
+Suscripción de **14,99 $/mes** o **109 $/año**. Las reseñas también señalan problemas de sincronización, cambios de interfaz y un número excesivo de pasos.
+
+**Lo que nosotros mejoramos:** KUBO no exige apuntar nada ni pagar suscripción.
+
+---
+
+### Competidor 6 — Fintonic
+
+**Qué hace:** app española que agrupa cuentas bancarias y clasifica gastos automáticamente.
+
+**Fortalezas:**
+- La más usada en España (más de 100.000 valoraciones en Google Play, 4,4/5).
+- Conexión bancaria real, clasificación automática.
+
+**Debilidades (reseñas reales de 1 estrella):**
+
+> *"No sincroniza los bancos, no puedes hacer previsiones de gastos porque las han quitado. Ver tus movimientos ahora es un infierno porque están ocultos. La han fastidiado."* — App Store, reseña de 1 estrella → [Fintonic, reseñas de App Store](https://apps.apple.com/es/app/fintonic-ahorra-y-fin%C3%A1nciate/id672220319?see-all=reviews)
+
+> *"La puntilla ha sido que se han reseteado todos los movimientos que tenía reclasificados y divididos por conceptos. Todo el trabajo de clasificación de este año y anteriores se ha perdido, y recuperar esa información es prácticamente imposible. Después de tanto tiempo organizando mis finanzas en Fintonic, que desaparezca sin más es el punto y final. No me vuelve a pasar: vuelvo a Excel, donde mis datos y mi trabajo dependen de mí."* — Google Play, reseña de 1 estrella → [Fintonic, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.fintonic&hl=es)
+
+Requiere **credenciales bancarias** para funcionar y depende de la conexión con las entidades financieras.
+
+**Lo que nosotros mejoramos:** KUBO no pide credenciales ni datos bancarios.
+
+---
+
+### Oportunidades que deja la competencia
+
+1. **Las soluciones actuales tienen fricciones diferentes:** unas dependen de la sincronización bancaria y otras exigen introducir o revisar los gastos manualmente. **Nuestro hueco:** un número semanal calculado con pocos datos y sin conexión bancaria.
+2. **Aunque algunas aplicaciones tienen metas de ahorro, KUBO las coloca en el centro del presupuesto:** el objetivo se resta antes de calcular cuánto se puede gastar cada semana.
+3. **KUBO propone un colchón de imprevistos con reglas visibles:** ante una subida, el usuario ve qué pasa si la descuenta del colchón, del gasto flexible o de un kubo.
+4. **KUBO explica el número semanal:** muestra de dónde sale y cómo cambia si se modifica un ingreso, un gasto fijo o el objetivo de ahorro.
+
+### Resumen
+
+| Competidor | Banco | Apuntar todo | Ahorro primero | Colchón | Explicación |
+|---|---|---|---|---|---|
+| Goodbudget | No | Sí | No | No | No |
+| Monefy | No | Sí | No | No | No |
+| PocketGuard | Sí | No | Parcial | No | No |
+| Rata y Fina | No | Sí | Parcial | No | No |
+| YNAB | Sí | Parcial | Sí | No | Parcial |
+| Fintonic | Sí | No | No | No | No |
+| **KUBO (nosotros)** | **No** | **Opcional** | **Sí** | **Sí** | **Sí** |
+
+---
 
 ## 4. Propuesta de valor única
 
