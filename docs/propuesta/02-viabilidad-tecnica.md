@@ -113,7 +113,42 @@ Este recorrido se construye **única y exclusivamente con los 8 requisitos Must 
    - Por la noche, Elisa inicia sesión desde su portátil con el mismo correo y ve exactamente los mismos 72,50 € disponibles y el gasto de 45 € ya descontado, cerrando su ciclo de control sin tocar una sola hoja de cálculo.
 
 # Requisitos técnicos: frontend e infraestructura
+## Frontend (React)
 
+### Bibliotecas adicionales necesarias
+
+| Biblioteca | Para qué | Por qué |
+|---|---|---|
+| **React Router** (`react-router-dom`) | Navegación entre pantallas (Inicio, Configuración, Registro, Modo Detalle) y protección de rutas privadas. | Es el estándar en el ecosistema React para SPA; permite gestionar redirecciones según si el usuario ha iniciado sesión o no sin recargar la página. |
+| **Zustand** | Gestión del estado global (sesión de usuario, disponible semanal, *kubos* y configuración del mes). | Mucho más ligero y directo que Redux; evita el *prop drilling* y no requiere envolver la aplicación en múltiples *providers* complejos. |
+| **Tailwind CSS** | Estilos, diseño *responsive* (*mobile-first*) y maquetación de componentes. | Permite construir una interfaz limpia y consistente rápidamente mediante clases de utilidad, garantizando que el registro en 2 toques funcione igual de bien en móvil que en escritorio. |
+| **Axios** | Peticiones HTTP asíncronas hacia la API REST del backend. | Permite configurar una instancia base y usar *interceptors* para adjuntar automáticamente el token JWT en cada petición y centralizar el manejo de errores (ej. sesión expirada). |
+| **React Hook Form** | Gestión y validación de formularios (registro, login, configuración financiera y alta de gastos). | Minimiza los re-renderizados de React al escribir y facilita la validación en el cliente (campos obligatorios, importes numéricos positivos, formato de email) antes de enviar datos al servidor. |
+| **Lucide React** | Iconografía de la interfaz (identificación visual de *kubos*, alertas de ritmo y botones de acción). | Librería de iconos SVG ligera y personalizable; resulta clave para que el usuario identifique su *kubo* de un vistazo y registre un gasto en 2 toques. |
+| **date-fns** | Cálculo y formateo de fechas (división de semanas del mes, días restantes hasta el domingo y cierres mensuales). | Es modular (*tree-shakeable*) e inmutable; permite operar con fechas en español sin el peso ni los problemas de mantenimiento de librerías antiguas como Moment.js. |
+| **Recharts** | Gráficas de distribución de gasto por categoría en el Modo Detalle (*Could have*). | Basada en componentes nativos de React y SVG; es sencilla de integrar y suficiente para representar gráficas de barras y anillos adaptables a móvil y web. |
+| **PapaParse** | Lectura y conversión en el navegador del extracto bancario en CSV (*Could have*). | Convierte ficheros CSV a objetos JSON directamente en el cliente en milisegundos, evitando tener que subir y almacenar archivos pesados en el servidor. |
+
+---
+
+## Infraestructura
+
+### Despliegue por capas
+
+| Parte | Dónde | Por qué | Condiciones y límites del plan gratuito |
+|---|---|---|---|
+| **Frontend** | **Vercel** (Plan *Hobby*) | Integración directa con GitHub: despliega automáticamente la rama `main` en producción y genera enlaces de *preview* por cada Pull Request del equipo. | Uso no comercial (ideal para proyecto académico), **100 GB/mes** de transferencia de datos (*Fast Data Transfer*), SSL automático y despliegues ilimitados. |
+| **Backend** | **Render** (Plan *Free Web Service*) | Soporta aplicaciones Node.js/Express de forma nativa conectando el repositorio de Git, con configuración sencilla de variables de entorno. | **750 horas/mes** gratuitas y 512 MB de RAM. El servicio entra en suspensión (*spin down*) tras **15 minutos de inactividad**, tardando unos 30-50 segundos en despertar en la primera petición. |
+| **Base de datos** | **MongoDB Atlas** (Plan *M0 Sandbox*) | Base de datos NoSQL gestionada en la nube (DBaaS); permite ubicar el clúster en la misma región europea que el backend (ej. Frankfurt) y conectar mediante una simple cadena URI. | **512 MB de almacenamiento**, RAM y vCPU compartidas, y hasta 500 conexiones simultáneas (de sobra para el volumen de documentos de texto de KUBO). |
+
+### ¿Necesitamos servicios cloud adicionales?
+
+Para el alcance del proyecto y su MVP **no necesitamos contratar servicios cloud de almacenamiento ni pasarelas de pago**, apoyándonos únicamente en lo incluido por defecto o en capas gratuitas:
+
+* **Sin almacenamiento cloud de archivos (tipo AWS S3 o Cloudinary):** Los usuarios no suben fotos ni documentos adjuntos. En caso de implementar la importación de extractos CSV (*Could have*), el archivo se procesa en la memoria del navegador con *PapaParse* y solo se envían los datos estructurados en JSON al backend.
+* **Sin CDN externa:** Vercel ya distribuye todos los recursos estáticos del frontend de React a través de su propia red global de entrega de contenidos (Edge Network) sin coste adicional.
+* **Sin pasarela de pagos (tipo Stripe):** El proyecto no incluye cobros ni suscripciones de pago.
+* **Servicio de correo transaccional (solo para *Should have*):** Para el requisito de recuperación de contraseña por email (Requisito 3), el backend se apoya en **Resend** (plan gratuito de hasta **3.000 correos/mes** y límite de **100 correos/día**), cuyo detalle de integración se especifica en el apartado de Backend.
 
 
 # Requisitos técnicos: backend y base de datos
