@@ -238,3 +238,63 @@ Registra cada gasto individual con su fecha exacta. Permite calcular el ritmo de
 * **De `presupuestos` a `movimientos` (1:N por referencia):** Cada gasto registrado en `movimientos` se vincula al usuario (`usuario_id`) y al mes (`presupuesto_id`), actualizando a su vez el acumulado `gastado` del *kubo* correspondiente. Se mantiene en una colección separada para poder filtrar gastos por semanas y soportar la futura carga de extractos CSV sin sobrecargar el documento mensual.
 
 # Capacidades del equipo, riesgos y la introducción que une todo
+
+## 1. Capacidades del equipo
+
+### Inventario de habilidades
+
+Nivel actual de cada integrante del equipo en las tecnologías clave del proyecto (Sin experiencia / Básico / Intermedio / Avanzado):
+
+| Miembro | React | Node.js / Express | MongoDB | Tailwind CSS | Git |
+|---|---|---|---|---|---|
+| Aarón | Básico | Básico | Sin experiencia | Sin experiencia | Intermedio |
+| Álvaro | Sin experiencia | Sin experiencia | Sin experiencia | Sin experiencia | Básico |
+| Gabriel | Básico | Intermedio | Básico | Básico | Sin experiencia |
+| David | Básico | Sin experiencia | Básico | Sin experiencia | Básico |
+
+---
+
+### Lagunas de conocimiento
+
+Tecnologías y conceptos que debemos aprender o reforzar para construir el MVP y cómo los vamos a cubrir en equipo:
+
+| Tecnología o concepto | A quién le falta | Cómo lo cubriremos |
+|---|---|---|
+| *Zustand* (estado global en React) | Todo el equipo | Documentación oficial y creación de un store de prueba en la primera semana; es ligero y directo. |
+| *MongoDB Atlas* (clúster, usuario, conexión con Mongoose) | Miembros 1, 2 | El Miembro 3 configurará el clúster inicial y explicará el paso a paso; documentaremos la conexión en un .env.example. |
+| *Despliegue en Vercel y Render* (variables de entorno y CORS) | Todo el equipo | Documentación oficial y hacer un deploy de prueba en la primera semana para dejar resueltos los permisos CORS. |
+| *Tailwind CSS* (clases utilitarias) | Todo el equipo | Guía de referencia oficial y apoyo de los Miembros 1 y 2 revisando los componentes visuales. |
+| *Autenticación JWT + Interceptores en Axios* |  Todo el equipo | Seguir un flujo estándar paso a paso para conectar el middleware de Express con el cliente de React antes de crear las pantallas. |
+
+---
+
+### ¿Es realista completar el proyecto a tiempo?
+
+*Sí, es realista completar el proyecto en el tiempo disponible porque hemos acotado estrictamente el MVP a los 8 requisitos *Must have.**
+
+* *Alcance controlado:* Hemos dejado fuera del MVP las funciones que requerían mayor carga de desarrollo (la importación y clasificación automática de CSV queda en Could have, las gráficas con Recharts en Could have y el simulador de imprevistos en Should have).
+* *Complejidad técnica asumible:* El núcleo del MVP se resuelve con operaciones CRUD estándar (usuarios, presupuesto mensual y movimientos) y aritmética básica (ingresos menos gastos fijos y ahorro objetivo, divididos entre las semanas del mes).
+* *Plan de contingencia:* Si la curva de aprendizaje de React o Express nos consume más tiempo del previsto, nos centraremos únicamente en asegurar que el recorrido de Elisa (los 8 Must have) funcione de principio a fin en producción, descartando los requisitos Should y Could have.
+
+---
+
+## 2. Riesgos técnicos
+
+| # | Riesgo | Probabilidad | Impacto | Mitigación |
+|---|---|---|---|---|
+| 1 | *El backend se duerme en Render* (el plan gratuito apaga el servidor tras 15 min de inactividad y tarda ~40 s en despertar) | Alta | Bajo | Mostrar un aviso claro en la pantalla de carga ("Conectando con el servidor...") y lanzar una petición ligera de comprobación (/api/health) nada más abrir la app. |
+| 2 | *El equipo no domina React y Zustand a tiempo* | Media | Alto | Empezar maquetando las vistas con datos fijos de prueba (mocks) antes de conectar con el backend y hacer pair programming en los bloqueos. |
+| 3 | *Fallos de conexión con MongoDB Atlas o bloqueos de CORS entre Vercel y Render* | Media | Alto | Configurar el clúster de Atlas (permitiendo la IP 0.0.0.0/0) y hacer el primer despliegue conectado entre Vercel y Render en la primera semana, no al final. |
+| 4 | *El envío de emails de recuperación de contraseña falla o se bloquea* | Media | Medio | Al ser un requisito Should have, no bloquea el MVP. Se probará en un entorno aislado con el plan gratuito de Resend antes de integrarlo en la rama principal. |
+| 5 | *Desviación del alcance (*scope creep)* por querer abarcar demasiadas funciones a la vez | Alta | Alto | Mantener la lista de *Won't have por escrito y no abrir ninguna tarea de Should o Could have hasta que los 8 Must have estén terminados y desplegados. |
+| 6 | *Conflictos de *merge en Git y rotura de la rama main* al trabajar 4 personas en paralelo | Media | Medio | Respetar estrictamente el flujo issue → rama → PR → review → merge, trabajando en ficheros separados y prohibiendo hacer *merge de un PR propio. |
+
+---
+
+## 3. Introducción que une todo
+
+Con la fase 1 cerrada, toca responder la segunda pregunta: *¿podemos construirlo?*. La respuesta corta es sí; la larga está en este documento.
+
+El MVP de *KUBO* se apoya en cuatro pilares técnicos: un frontend en React con Tailwind CSS que muestra el número semanal disponible, un backend en Node.js y Express con autenticación por correo electrónico y JWT, MongoDB Atlas para guardar y sincronizar los datos en tiempo real entre móvil y ordenador, y un registro rápido de gastos en 2 toques. Toda la lógica es aritmética básica —ingresos menos gastos fijos menos ahorro objetivo, repartidos entre las semanas del mes—, lo que lo hace realista para el tiempo disponible y las capacidades actuales del equipo.
+
+Este documento recoge los requisitos funcionales priorizados con el método MoSCoW, las decisiones técnicas de frontend, backend, base de datos e infraestructura, la evaluación de capacidades del equipo y los riesgos identificados con sus estrategias de mitigación. Lo que aquí se decide nos da una base sólida para empezar a construir y se podrá ajustar en fases posteriores según avance el desarrollo.
