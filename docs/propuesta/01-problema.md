@@ -1,4 +1,4 @@
-# KUBO — Detección del problema (Fase 1)
+# KUBO — Detección del problema
 
 KUBO es una app que te dice *cuánto puedes gastar esta semana sin dejar de ahorrar*. No se conecta a tu banco y no te pide apuntar cada gasto: introduces tus ingresos, tus gastos fijos y cuánto quiere ahorrar este mes, y KUBO te devuelve un solo número para toda la semana.
 
@@ -41,6 +41,7 @@ En nuestras entrevistas, las tres personas consultadas revisan su situación eco
 > "Como a veces me escriben para los gastos del veterinario, otras veces los gatos comen más, no llevo un control exhaustivo." — Clara, 24 a. Dejó de llevar cuentas porque los gastos imprevistos de sus gatos rompían su sistema.
 
 > *Lo que más pereza me da es introducir los gastos. Llevo el Excel al día, pero es una rutina monótona y pesada; me gustaría algo más visual, con gráficos claros y donde sea muy fácil verificar en qué se va el dinero de un vistazo.
+
 ## 2. Usuarios objetivo
 
 Las personas usuarias objetivo se han definido a partir del cuestionario realizado a jugadores habituales. Se han creado dos perfiles con situaciones de uso diferentes: una persona que utiliza la aplicación principalmente para decidir qué jugar sola y otra que la utiliza para encontrar un juego compatible con un grupo.
