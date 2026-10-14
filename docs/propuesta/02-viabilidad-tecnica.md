@@ -152,7 +152,89 @@ Para el alcance del proyecto y su MVP **no necesitamos contratar servicios cloud
 
 
 # Requisitos técnicos: backend y base de datos
+## Backend (Node.js + Express)
 
+### Autenticación y gestión de sesiones
 
+**Sí, desde el MVP.** El sistema implementa autenticación propia basada en **correo electrónico y contraseña** para permitir la sincronización automática entre dispositivos (móvil y web):
+
+* **Registro e inicio de sesión (Must have):** El usuario se registra e inicia sesión con su email y contraseña (mínimo 8 caracteres). Las contraseñas nunca se almacenan en texto plano; se guardan encriptadas mediante *hash* utilizando **`bcrypt`** (`bcryptjs`).
+* **Gestión de sesiones con JWT:** Al iniciar sesión, el servidor genera un **JSON Web Token (JWT)** firmado con `jsonwebtoken`. El frontend lo guarda y lo envía en cada petición mediante los interceptores de Axios. Configuraremos una **expiración amplia (30 días)** para que el usuario mantenga su sesión abierta en el día a día sin tener que autenticarse constantemente.
+* **Sesión por dispositivo:** Cada dispositivo (móvil y ordenador) guarda su propio token local. Iniciar sesión en el móvil no abre la sesión en el ordenador, pero ambos dispositivos consultan y actualizan exactamente los mismos datos en tiempo real porque están asociados al mismo `usuario_id`.
+* **Recuperación de contraseña (Should have):** Enlace enviado por correo electrónico con un token temporal (`reset_token`) de un solo uso y caducidad de 1 hora para restablecer la clave.
+* **Roles de usuario:** **No existen roles distintos.** Todos los usuarios tienen el mismo nivel de permisos (usuario estándar) y únicamente pueden acceder a sus propios datos financieros, dado que la aplicación es de control personal.
+
+### Bibliotecas principales de Backend
+
+| Biblioteca | Para qué | Por qué |
+|---|---|---|
+| **Express** | Construcción de la API REST, rutas y *middlewares* | Es el framework estándar de Node.js, ligero y directo para crear endpoints JSON. |
+| **Mongoose** | Modelado de esquemas (ODM) y conexión con MongoDB | Valida la estructura de los documentos antes de guardarlos y simplifica las consultas. |
+| **bcryptjs** | Encriptación de contraseñas | Estándar de seguridad para generar el *hash* de la contraseña antes de guardarla en base de datos. |
+| **jsonwebtoken** | Generación y verificación de tokens JWT | Permite autenticar peticiones de forma *stateless* mediante un *middleware* de rutas privadas. |
+| **cors** y **dotenv** | Seguridad de dominios cruzados y variables de entorno | Necesarios para permitir peticiones desde Vercel y ocultar las claves de conexión fuera del código. |
+
+### APIs o servicios externos
+
+| Servicio | Para qué | ¿Necesario en el MVP? | Condiciones y límite del plan gratuito |
+|---|---|---|---|
+| **Resend** (o SendGrid) | Envío del correo electrónico con el enlace de recuperación de contraseña. | **No** (corresponde al requisito *Should have* #3; el MVP opera con registro y login directo). | **3.000 emails/mes** (con límite de **100 emails/día**) en el plan gratuito de Resend, suficiente para el proyecto. |
+
+---
+
+## Base de datos (MongoDB)
+
+### Esquema preliminar de colecciones principales
+
+El diseño en MongoDB se organiza en **3 colecciones principales**: `users`, `presupuestos` y `movimientos`.
+
+#### 1. Colección: `users`
+Almacena la cuenta de cada usuario registrado y los campos de apoyo para la recuperación de contraseña.
+
+| Campo | Tipo | Descripción / Ejemplo |
+|---|---|---|
+| `_id` | `ObjectId` | Identificador único generado por MongoDB. |
+| `email` | `String` | Correo electrónico único del usuario (`"elisa@email.com"`). |
+| `password_hash` | `String` | Contraseña encriptada con bcrypt (`"$2b$10$..."`). |
+| `reset_token` | `String` / `null` | Token temporal para recuperación de contraseña (por defecto `null`). |
+| `reset_expires` | `Date` / `null` | Fecha de caducidad del token de recuperación (por defecto `null`). |
+| `created_at` | `Date` | Fecha de alta del usuario (`ISODate`). |
+
+#### 2. Colección: `presupuestos` (un documento por usuario y mes)
+Guarda la foto financiera del mes, incluyendo la configuración base, el estado del colchón y los *kubos* embebidos.
+
+| Campo | Tipo | Descripción / Ejemplo |
+|---|---|---|
+| `_id` | `ObjectId` | Identificador único del presupuesto mensual. |
+| `usuario_id` | `ObjectId` | Referencia al `_id` del usuario en la colección `users`. |
+| `mes` | `String` | Mes y año del presupuesto en formato `YYYY-MM` (`"2026-10"`). |
+| `ingresos` | `Number` | Ingresos mensuales configurados (`1450`). |
+| `gastos_fijos` | `Number` | Suma de gastos fijos mensuales (`780`). |
+| `ahorro_objetivo` | `Number` | Cantidad mensual destinada al ahorro (`200`). |
+| `colchon` | `Object` | Objeto embebido con el estado del colchón: `{ configurado: 30, acumulado: 70, usado: 0 }`. |
+| `kubos` | `Array<Object>` | Lista embebida de categorías con su tope y acumulado: `[{ nombre: "Comida", tope: 250, gastado: 180 }, { nombre: "Ocio", tope: 120, gastado: 45 }]`. |
+| `imprevistos` | `Array<Object>` | Registro de desvíos cubiertos: `[{ fecha: "2026-10-15", importe: 23, origen: "colchon", concepto: "Luz" }]`. |
+| `created_at` / `updated_at` | `Date` | Marcas de tiempo de creación y última actualización (`ISODate`). |
+
+#### 3. Colección: `movimientos`
+Registra cada gasto individual con su fecha exacta. Permite calcular el ritmo de gasto de la semana actual en el MVP (Reqs. 9, 10 y 11) y alimenta el historial y la importación CSV en el Modo Detalle.
+
+| Campo | Tipo | Descripción / Ejemplo |
+|---|---|---|
+| `_id` | `ObjectId` | Identificador único del movimiento. |
+| `usuario_id` | `ObjectId` | Referencia al `_id` del propietario en `users`. |
+| `presupuesto_id` | `ObjectId` | Referencia al `_id` del mes correspondiente en `presupuestos`. |
+| `mes` | `String` | Mes al que pertenece el gasto (`"2026-10"`). |
+| `fecha` | `Date` | Fecha exacta del gasto (`"2026-10-20"`) para calcular la semana en curso. |
+| `categoria` | `String` | Nombre del *kubo* al que se imputa (`"Comida"`). |
+| `importe` | `Number` | Cantidad gastada (`45.20`). |
+| `es_imprevisto` | `Boolean` | Indica si el gasto se descuenta del colchón de imprevistos (`false`). |
+| `origen` | `String` | Procedencia del dato: `"registro"` (en 2 toques) o `"csv"` (importado). |
+
+### Relaciones entre colecciones
+
+* **De `users` a `presupuestos` (1:N por referencia):** El campo `presupuestos.usuario_id` relaciona cada presupuesto mensual con su propietario en la colección `users`.
+* **Dentro de `presupuestos` (Embebido):** `presupuestos.kubos`, `presupuestos.colchon` y `presupuestos.imprevistos` son objetos y arrays embebidos directamente en el documento del mes. No requieren otra colección porque son pocos elementos por mes y siempre se consultan junto con el presupuesto en la pantalla principal.
+* **De `presupuestos` a `movimientos` (1:N por referencia):** Cada gasto registrado en `movimientos` se vincula al usuario (`usuario_id`) y al mes (`presupuesto_id`), actualizando a su vez el acumulado `gastado` del *kubo* correspondiente. Se mantiene en una colección separada para poder filtrar gastos por semanas y soportar la futura carga de extractos CSV sin sobrecargar el documento mensual.
 
 # Capacidades del equipo, riesgos y la introducción que une todo
