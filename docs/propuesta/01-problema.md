@@ -162,82 +162,147 @@ Las personas usuarias objetivo se han definido a partir del cuestionario realiza
 
 ---
 
-## 3. Análisis de competencia
-### Competidor 1 — Steam (Valve Corporation)
-* **Enlace oficial:** [store.steampowered.com](https://store.steampowered.com/)
+## 3. La competencia
 
-#### Fortalezas
-- Es la tienda digital de PC con el catálogo más masivo y activo del mercado.
-- Integra reseñas de usuarios, etiquetas comunitarias (*user tags*), lista de amigos y el sistema *Steam Labs*.
-- Máxima adopción: 100% de presencia entre los usuarios de nuestro cuestionario.
-
-#### Debilidades
-- **Sobrecarga de elección:** Su interfaz prioriza la venta comercial sobre la recomendación contextual inmediata.
-- No resuelve la pregunta directa: *«¿A qué jugamos las personas conectadas en llamada de Discord ahora mismo?»*.
-- El buscador no permite filtrar de forma ágil combinando número exacto de integrantes con tiempo de sesión disponible y compatibilidad simultánea.
-
-#### Reseñas reales y quejas de 1 estrella (Trustpilot / Foros de Steam Community)
-> ⭐☆☆☆☆ *"El sistema de recomendación es horrible. Tengo cientos de juegos en mi biblioteca y siempre me sugiere lo mismo o juegos que no tienen nada que ver con lo que busco. La biblioteca se vuelve inmanejable cuando acumulas títulos."* — Usuario en Trustpilot.
->
-> ⭐☆☆☆☆ *"Steam no ayuda a elegir. Pasamos más de media hora mirando la tienda o la lista de amigos para ver qué podemos jugar juntos y casi nunca encontramos filtros útiles por número exacto de integrantes."* — Crítica en Steam Community Discussions.
-
-**Oportunidad para PlayNext:** Brindar una interfaz ligera, sin sobrecarga comercial, capaz de recomendar con un solo clic según el contexto exacto (solitario o grupo de N personas).
+Seis soluciones existentes. Ninguna resuelve nuestro problema.
 
 ---
 
-### Competidor 2 — HowLongToBeat (IGN Entertainment)
-* **Enlace oficial:** [howlongtobeat.com](https://howlongtobeat.com/)
+### Competidor 1 — Goodbudget
 
-#### Fortalezas
-- Base de datos de referencia mundial sobre estimación de duración de videojuegos (historia principal, extras y completista).
-- Datos recopilados de partidas reales aportados por la comunidad.
-- Imprescindible para jugadores que buscan títulos adaptados a su tiempo disponible.
+*Qué hace:* reproduce el método de los sobres en digital.
 
-#### Debilidades
-- Está concebida como un buscador de consulta pasiva, no como un asistente de recomendación activa.
-- Requiere que el usuario ya tenga en mente el título del videojuego para buscarlo.
-- Carece de filtros orientados a multijugador grupal, tamaño del grupo o compatibilidad cruzada.
+*Fortalezas:* método claro, sin banco, multi-dispositivo, versión web.
 
-#### Reseñas reales y quejas de 1 estrella (Foros Reddit r/patientgamers / Web)
-> ⭐☆☆☆☆ *"La web es genial si ya sabes a qué quieres jugar, pero no sirve de nada si estás bloqueado mirando la pantalla sin saber qué empezar. Le falta un recomendador inteligente que use su base de datos de horas."* — Usuario en Reddit r/patientgamers.
->
-> ⭐☆☆☆☆ *"La interfaz de búsqueda es tosca y no tiene ninguna herramienta para grupos o para descubrir juegos nuevos por tiempo disponible sin tener que tragarse listas infinitas."* — Reseña en foros web.
+*Debilidades:*
 
-**Oportunidad para PlayNext:** Emplear la métrica de tiempo de sesión (partidas cortas vs. largas) como un filtro selector directo en el motor de recomendación, ahorrando la búsqueda manual.
+> "Manual entry required for free users: The free version doesn't sync with your bank accounts, so you must manually enter every transaction." — Experian
 
----
+> "La versión gratuita requiere apuntar a mano: la versión gratuita no se sincroniza con tus cuentas bancarias, así que debes introducir manualmente cada transacción." (traducción)
 
-### Competidor 3 — RAWG Video Games Database
-* **Enlace oficial:** [rawg.io](https://rawg.io/)
+> "Which app to use to keep track of expenses. I have tried goodbudget, couple of more. But stop after a month." — Reddit, r/personalfinance
 
-#### Fortalezas
-- Base de datos con más de 500.000 videojuegos y una API abierta muy documentada.
-- Clasificación limpia por plataformas, géneros, creadores y valoraciones medias.
-- Excelente estética visual para explorar fichas técnicas.
+> "Qué app usar para controlar los gastos. He probado Goodbudget, un par más. Pero lo dejo después de un mes." (traducción)
 
-#### Debilidades
-- Funciona como una red social/catálogo de descubrimiento infinito, lo que fomenta aún más la parálisis por elección.
-- La información de multijugador es genérica (suele indicar solo si tiene o no multijugador, pero no el número exacto de jugadores soportados).
-- No cuenta con un recomendador de un solo clic adaptado al grupo.
+*Lo que hace bien y nosotros repetimos:* la idea de los sobres (topes por categoría).
 
-#### Reseñas reales y quejas de 1 estrella (Google Play Store / Trustpilot)
-> ⭐☆☆☆☆ *"Es básicamente una Wikipedia de videojuegos. Entras para buscar una recomendación rápida y terminas scrolleando 40 minutos entre portadas sin decidirte por nada."* — Reseña en Google Play Store.
->
-> ⭐☆☆☆☆ *"Faltan datos clave para jugar con amigos. Pone 'multijugador' pero no te dice si admite 3, 4 o más personas hasta que lo investigas por fuera."* — Crítica en foros de videojuegos.
-
-**Oportunidad para PlayNext:** Colocar una capa de decisión guiada por encima del catálogo: número exacto de personas, filtro de modo cooperativo/competitivo y botón directo de decisión.
+*Lo que nosotros mejoramos:* no exigir apuntado diario; el registro es opcional.
 
 ---
 
-### Oportunidades identificadas para PlayNext
-- **Modo 'Sorpréndeme' (Un solo clic):** Para el jugador que no quiere configurar nada y busca romper el bucle de indecisión al instante.
-- **Selector de modo:** Separación clara y radical entre `Jugar solo` y `Jugar con amigos`.
-- **Filtro central por número de jugadores:** Eliminar de raíz la frustración de recomendar títulos que no cuadran con el grupo en llamada.
-- **Transparencia y explicabilidad:** Explicar con una frase por qué se recomienda ese título (*"Recomendado porque sois 4 personas, buscáis cooperativo y tenéis 45 minutos"*).
-- **Cero barreras de entrada:** Totalmente funcional sin registro, sin login obligatorio y sin pedir permisos intrusivos de cuentas de terceros.
-- **Función de descarte activo:** Si la opción no convence, pulsar 'Siguiente opción' sin que repita títulos ya rechazados en la sesión.
+### Competidor 2 — Monefy
 
+*Qué hace:* registro rápido de gastos e ingresos, con categorías y gráficas.
 
+*Fortalezas:* apuntar es casi inmediato; diseño visual claro.
+
+*Debilidades:*
+
+> "Some user reviews complain of glitches in app and a not so [intuitive interface]." — CNBC, reseñas de apps de presupuesto 2026
+
+> "Algunas reseñas de usuarios se quejan de fallos en la app y de una interfaz poco [intuitiva]." (traducción)
+
+La versión gratuita no se conecta al banco: hay que apuntar cada gasto a mano.
+
+*Lo que hace bien y nosotros repetimos:* la velocidad de registro (nosotros lo llevamos a 2 toques).
+
+*Lo que nosotros mejoramos:* el ahorro como centro del producto; Monefy es un registrador de gastos, no un gestor de ahorro.
+
+---
+
+### Competidor 3 — PocketGuard
+
+*Qué hace:* calcula lo disponible después de facturas y objetivos.
+
+*Fortalezas:* responde exactamente a "¿cuánto me queda?"; maneja objetivos de ahorro.
+
+*Debilidades:*
+
+La conexión al banco es un requisito que muchos rechazan: exige entregar credenciales y dejar que miren la cuenta por detrás.
+
+*Lo que hace bien y nosotros repetimos:* la promesa de "un número disponible".
+
+*Lo que nosotros mejoramos:* no pedir credenciales bancarias; el número se calcula con tres datos que el usuario introduce voluntariamente.
+
+---
+
+### Competidor 4 — Rata y Fina
+
+*Qué hace:* app de control de gastos con un tono directo y sincero. Su lema es "La única que te dice la verdad".
+
+*Fortalezas:*
+- Tono diferenciador: "Las apps de finanzas te tratan como si fueras de cristal. Fina no."
+- Presente en App Store y Google Play.
+- Crecimiento rápido: de 5 a 201 valoraciones en pocos meses.
+
+*Debilidades:*
+- *Suscripción obligatoria* para todas las funciones: la versión gratuita solo permite registrar un gasto en una sola categoría.
+- Solo iOS según algunas fuentes, aunque Appbrain la lista también en Google Play.
+- Comunidad muy pequeña (201 valoraciones vs. miles en sus competidores).
+- Tono "duro" que puede generar rechazo en usuarios que buscan algo más amable.
+
+*Lo que nosotros mejoramos:* KUBO es gratis en su versión base y su tono es amable, no duro.
+
+---
+
+### Competidor 5 — YNAB (You Need A Budget)
+
+*Qué hace:* la app de presupuesto más conocida del mundo. Método de asignar cada euro a una categoría, con objetivos de ahorro.
+
+*Fortalezas:*
+- Marca enorme, comunidad activa, educación financiera integrada.
+- El ahorro es central: no gastar lo que no tienes.
+
+*Debilidades (reseñas reales de 1 estrella):*
+
+> "If YNAB's approach makes you miserable and you abandon it after two weeks, it's not worth a penny." — Foro de beancount.io
+
+> "Si el enfoque de YNAB te hace miserable y lo abandonas después de dos semanas, no vale ni un céntimo." (traducción)
+
+Suscripción de *14,99 $/mes* o *109 $/año*. Exige apuntar cada gasto a mano.
+
+*Lo que nosotros mejoramos:* KUBO no exige apuntar nada ni pagar suscripción.
+
+---
+
+### Competidor 6 — Fintonic
+
+*Qué hace:* app española que agrupa cuentas bancarias y clasifica gastos automáticamente.
+
+*Fortalezas:*
+- La más usada en España (más de 100.000 valoraciones en Google Play, 4,4/5).
+- Conexión bancaria real, clasificación automática.
+
+*Debilidades (reseñas reales de 1 estrella):*
+
+> "Por favor mucho cuidado con los datos personales que envían, tiene muchísimos errores por todos lados, fallo de peticiones y 0 seguridad." — Usuario en redes sociales sobre Fintonic
+
+Requiere *credenciales bancarias* para funcionar.
+
+*Lo que nosotros mejoramos:* KUBO no pide credenciales ni datos bancarios.
+
+---
+
+### Oportunidades que deja la competencia
+
+1. *Ninguna combina las dos cosas:* las que no piden apuntar se conectan al banco; las que no se conectan piden apuntarlo todo. *Nuestro hueco: ni banco ni apuntado constante.*
+2. *Ninguna pone el ahorro primero:* todas calculan lo que sobra; ninguna aparta el objetivo antes de dar el número semanal.
+3. *Ninguna tiene colchón de imprevistos con reglas visibles:* el desvío se paga quitándole a otra categoría, no desde una bolsa aparte.
+4. *Ninguna explica sus cifras:* dicen "te quedan X" pero no muestran de dónde sale ese X.
+
+### Resumen
+
+| Competidor | Banco | Apuntar todo | Ahorro primero | Colchón | Explicación |
+|---|---|---|---|---|---|
+| Goodbudget | No | Sí | No | No | No |
+| Monefy | No | Sí | No | No | No |
+| PocketGuard | Sí | No | Parcial | No | No |
+| Rata y Fina | No | Sí | Parcial | No | No |
+| YNAB | No | Sí | Sí | No | No |
+| Fintonic | Sí | No | No | No | No |
+| *KUBO (nosotros)* | *No* | *Opcional* | *Sí* | *Sí* | *Sí* |
+
+---
 ## 4. Propuesta de valor única
 
 ### Problema actual
