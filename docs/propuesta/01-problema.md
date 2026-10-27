@@ -53,233 +53,215 @@ A partir de las respuestas extraídas de nuestro cuestionario y entrevistas de c
 
 ## 2. Las personas
 
-Tres personas reales de nuestro entorno, con roles distintos frente a la aplicación. Cada una justifica una parte del producto.
+Tres personas reales de nuestro centro educativo con roles distintos frente al sistema. Sus respuestas al cuestionario justifican cada módulo y funcionalidad de AULAFIX.
 
 ---
 
-### User persona 1 — Elisa Lucena 
+### User persona 1 — Carmen Ortega (Emisora docente)
 
-> "Verificando los gastos en la aplicación del banco diariamente, no llevo unas cuentas exactas."
+> "Si se estropea algo, no tengo tiempo en el cambio de clase para cruzar el centro y apuntarlo en un cuaderno."
 
 | Campo | Dato |
 |---|---|
-| Edad | 25 años |
-| Ocupación | Integradora social |
-| Ubicación | San Fernando |
-| Dispositivo | Móvil iPhone |
-| Conectividad | WiFi |
-| Momento de uso | Noches, en casa, en el sofá |
-| Contexto | Revisa la app del banco a diario para comprobar que no se ha pasado |
+| Edad | 44 años |
+| Ocupación | Profesora de Secundaria y Bachillerato |
+| Ubicación | Cádiz |
+| Dispositivo | Teléfono móvil Android (Samsung Galaxy) / Portátil de aula |
+| Conectividad | Red WiFi corporativa del centro |
+| Momento de uso | En el cambio de clase (5 minutos de margen) o durante una guardia |
+| Contexto | Se desplaza entre diferentes aulas a lo largo de la mañana; necesita comunicar averías sin abandonar a su grupo |
 
 #### Necesidades
-
-- Saber en 5 segundos cuánto le queda este mes sin abrir la app del banco y recorrer apuntes.
-- Llegar a fin de mes sin descubrir que se ha pasado de gasto cuando ya es tarde.
-- Ahorrar lo que le sobra sin quedarse corta para las facturas del mes siguiente.
+- Notificar un desperfecto en menos de 30 segundos desde su propio móvil.
+- Comprobar al instante si una avería de su aula ya ha sido comunicada por el profesor anterior para no duplicar trabajo.
+- Conocer si el problema está en vías de solución antes de planificar su próxima sesión lectiva en esa sala.
 
 #### Frustraciones
-
-- Se da cuenta de que gastó de más cuando el mes ya se le ha acabado: "lo averiguo viendo que había gastado más de lo normal, calculándolo con la calculadora".
-- Va "de cabeza": la cuenta de cuánto le queda vive en la memoria, no en un número fiable.
-- Los gastos imprevistos se los paga quitándole dinero a las facturas: "de los mismos gastos con los que paga las facturas".
-- Tiene que abrir la app del banco a diario para sentir que controla su dinero.
+- Llegar a clase y encontrarse el proyector sin cable HDMI o un fluorescente fundido parpadeando toda la hora.
+- La pereza de bajar dos plantas hasta conserjería para escribir en un libro que no sabe si alguien va a leer.
+- No recibir ninguna retroalimentación sobre si el parte técnico ha sido atendido o descartado.
 
 #### Objetivos
-
-- Decidir si puede gastarse algo en 5 segundos, sin abrir el banco.
-- Llegar a fin de mes sin sorpresas.
-- Ahorrar de forma constante sin esfuerzo diario.
+- Tramitar avisos rápidos categorizados (aula, mobiliario, electricidad, TIC).
+- Recibir un aviso visual cuando el equipo de mantenimiento cambie el estado a «Resuelto».
+- Acceder directamente con su usuario de Séneca sin crearse una cuenta más.
 
 #### Casos de uso
-
-1. Abre la app por la noche y ve su número semanal en 5 segundos.
-2. Antes de comprar, consulta si está dentro de su ritmo.
-3. Al final de mes, recibe un resumen: lo que ahorró, lo que gastó de más y por qué.
+1. Abre la web en el móvil, inicia sesión con sus claves de Séneca y el sistema detecta su rol de docente.
+2. Selecciona «Aula 104», marca «TIC / Proyector», adjunta una foto del fallo y envía el aviso.
+3. Consulta en su panel personal el listado de incidencias que ha emitido y visualiza su estado en tiempo real.
 
 ---
 
-### User persona 2 — Clara Romero
+### User persona 2 — Manuel Domínguez (Receptor / Mantenimiento)
 
-> "Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiero saber."
+> "Recibo avisos por el pasillo, en notas de papel y por teléfono; al final del día no sé qué era lo más urgente."
 
 | Campo | Dato |
 |---|---|
-| Edad | 24 años |
-| Ocupación | Dependienta |
-| Ubicación | San Fernando |
-| Dispositivo | Móvil iPhone |
-| Conectividad | WiFi |
-| Momento de uso | Fuera de casa, justo antes de hacer una compra |
-| Contexto | Vive al día; evita mirar sus números porque le generan ansiedad |
+| Edad | 56 años |
+| Ocupación | Personal de Conserjería y Mantenimiento de Instalaciones |
+| Ubicación | Cádiz |
+| Dispositivo | Ordenador de sobremesa de conserjería / Móvil personal |
+| Conectividad | Red cableada en conserjería / 4G en movilidad |
+| Momento de uso | A primera hora de la mañana y a lo largo de toda la jornada laboral |
+| Contexto | Es la persona de referencia para solucionar averías de fontanería, cerrajería, electricidad y mobiliario del centro |
 
 #### Necesidades
-
-- Poder comprarse algo sin tener que hacer cuentas angustiosas antes.
-- Que los gastos de sus gatos (comida, veterinario) no arruinen el mes.
-- Permitirse sus caprichos sin culpa.
+- Tener una bandeja unificada donde consultar todas las averías del centro clasificadas por zona (baños, patio, pasillos, aulas).
+- Contar con fotografías e indicaciones exactas de la ubicación antes de desplazarse con la caja de herramientas.
+- Cambiar el estado de los partes («En revisión», «Pieza pedida», «Resuelto») para que la comunidad sepa que se está trabajando en ello.
 
 #### Frustraciones
-
-- Se quedó sin dinero antes de cobrar el mes pasado.
-- Dejó de llevar cuentas porque lo variable se lo desbarataba: "no llevo un control exhaustivo".
-- Evita mirar sus números: "no sé lo que me queda... y tampoco lo quiero saber".
-- Termina cada mes sin margen para sus cosas.
+- Partes escritos a mano con letra ilegible o sin concretar el lugar del desperfecto («el enchufe roto»).
+- Profesores molestos que le reclaman soluciones a viva voz durante el recreo por problemas de los que nadie le avisó.
+- Desplazarse al fondo del patio y comprobar que el trabajo requería una herramienta distinta a la que llevaba encima.
 
 #### Objetivos
-
-- Saber antes de comprar si se lo puede permitir.
-- Llegar a fin de mes con el ahorro intacto.
-- Que la app le diga cuándo puede darse un capricho.
+- Reducir a cero las notas adhesivas sueltas y los avisos verbales no registrados.
+- Priorizar los trabajos graves (fugas de agua, cristales rotos, cortes de luz) frente a tareas menores.
+- Mantener un registro histórico que justifique ante secretaría la compra de repuestos y materiales.
 
 #### Casos de uso
-
-1. Va a comprar y consulta su número semanal antes de pagar.
-2. Registra un gasto de 2 toques cuando algo se sale de lo previsto.
-3. Recibe un aviso cuando un imprevisto supera su colchón y decide de dónde sacar el dinero.
+1. Abre el panel de mantenimiento en el navegador de conserjería a primera hora.
+2. Filtra por «Fontanería / Aseos», observa una incidencia con foto de una cisterna rota en la planta baja y cambia el estado a «En reparación».
+3. Una vez sustituida la pieza, marca el ticket como «Resuelto», registrando la hora de cierre automáticamente.
 
 ---
 
-### User persona 3 (Modo Detalle) — Flor Comesaña
+### User persona 3 — Marcos Benítez (Emisor alumnado)
 
-> "Lo que más pereza me da es introducir los gastos."
+> "Si vemos algo roto en el patio o en el taller no decimos nada, porque los alumnos no tenemos a quién decírselo."
 
 | Campo | Dato |
 |---|---|
-| Edad | 55 años |
-| Ocupación | Autónoma |
+| Edad | 21 años |
+| Ocupación | Alumno de 2º de Formación Profesional (Grado Superior) |
 | Ubicación | San Fernando |
-| Dispositivo | Portátil |
-| Conectividad | WiFi |
-| Momento de uso | En casa, en el escritorio, a mediodía |
-| Contexto | Lleva sus cuentas en un Excel; quiere entender en qué se va el dinero |
+| Dispositivo | Teléfono móvil Android (Xiaomi) |
+| Conectividad | Datos móviles / Red WiFi del centro |
+| Momento de uso | Durante los recreos o en horas de taller práctico |
+| Contexto | Pasa muchas horas en las instalaciones comunes y aulas de informática; detecta averías físicas a diario |
 
 #### Necesidades
-
-- Ver en qué se le fue el mes sin tener que revisar el Excel celda a celda.
-- Dedicar menos tiempo a apuntar gastos y más a decidir qué hacer con ellos.
-- Que el control que ya tiene le sirva también para llegar a fin de mes con margen.
+- Un cauce digital accesible para reportar desperfectos en su aula o zonas comunes sin pedir instancias en secretaría.
+- Saber si un puesto informático o recurso averiado ya está fichado por el centro para no sentarse en él.
+- Poder incluir fotografías del error para no tener que dar explicaciones técnicas complejas.
 
 #### Frustraciones
-
-- La parte que más le cuesta es el apuntado: "introducir los gastos".
-- Para encontrar un gasto concreto tiene que recorrer la hoja entera.
-- Lleva las cuentas al detalle y aun así el día 27 solo le quedan 40 €: controla, pero sin margen.
+- Llegar a clase práctica y perder tiempo buscando un ordenador que tenga ratón y teclado funcionales.
+- Ver puertas de baños descolgadas o papeleras rotas durante semanas en el patio sin que nadie las arregle.
+- La sensación de que la opinión o aviso de un alumno no se toma en cuenta si no pasa por un profesor.
 
 #### Objetivos
-
-- Saber en qué se gastó el mes en un vistazo.
-- Reducir el tiempo dedicado a apuntar.
-- Llegar a fin de mes con margen, no solo con control.
+- Reportar desperfectos en tres toques desde su smartphone utilizando su cuenta de iPasen.
+- Ver el estado de las instalaciones de su edificio para comprobar que sus avisos surten efecto.
 
 #### Casos de uso
+1. Inicia sesión con su cuenta de iPasen y la aplicación lo reconoce como alumno de su curso y grupo.
+2. Detecta una avería en el baño del patio, saca una fotografía, selecciona «Aseos exteriores» y envía la incidencia.
+3. Comprueba en el mapa de avisos del centro que su incidencia figura en color naranja («Pendiente de revisión»).
 
-1. Importa su extracto bancario en CSV una vez al mes y la app lo reparte entre categorías.
-2. Revisa una tabla de movimientos y gráficas por categoría en el portátil.
-3. Ajusta su previsión de gastos recurrentes (luz, gasolina) cuando ve desvíos.
+---
 
-# Guion de la Entrevista: ¿Cómo llevas el control de tu dinero, si es que lo llevas?
+# Guion de la Entrevista: ¿Cómo gestionas o reportas las averías en el centro?
 
-### Perfil A — Quien NO lleva sus cuentas
-* ¿Sabes ahora mismo cuánto te queda para gastar este mes?
-* ¿Cuánto crees que te queda esta semana?
-* ¿Has intentado alguna vez llevar tus cuentas? ¿Qué pasó?
-* ¿Cuándo fue la última vez que te quedaste sin dinero antes del día de cobro?
-* ¿De dónde sacaste el dinero la última vez que tuviste un gasto que no esperabas?
-* Si te sobran 100 € al final de mes, ¿qué haces con ellos?
+### Perfil A — Docente (Emisor en aulas y guardias)
+1. Cuando llegas a un aula o pasillo y encuentras un desperfecto técnico o material, ¿qué haces habitualmente?
+2. ¿Qué vía utilizas para avisar del problema? (Papel en conserjería, correo, aviso verbal, otros).
+3. ¿Cuánto tiempo sueles tardar en gestionar ese aviso?
+4. ¿Sabes en algún momento si el problema ha sido atendido o tienes que volver al lugar a comprobarlo tú mismo?
+5. ¿Alguna vez has dejado de comunicar una avería por falta de tiempo o pereza burocrática?
+6. ¿Qué le pedirías a una aplicación para que te resultase útil en tu día a día escolar?
 
-### Perfil B — Quien SÍ lleva sus cuentas
-* ¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)
-* ¿Qué parte de eso te da más pereza?
-* ¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?
-* ¿Cuánto crees que te queda ahora mismo este mes?
+### Perfil B — Personal de Conserjería / Mantenimiento (Receptor y resolutor)
+1. ¿A través de qué medios te llegan habitualmente los avisos de averías del centro?
+2. ¿Con qué frecuencia recibes avisos imprecisos que te obligan a desplazarte dos veces para saber qué pasa?
+3. ¿Cómo organizas y priorizas las reparaciones pendientes a lo largo de la semana?
+4. ¿Qué ocurre cuando varios profesores vienen a quejarse de la misma avería?
+5. ¿Dispones de un registro histórico para justificar compras de materiales a secretaría?
+6. ¿Qué información mínima necesitas ver en un parte para actuar de forma eficiente?
+
+### Perfil C — Alumnado (Emisor en aulas, talleres y zonas comunes)
+1. Si encuentras un ordenador roto, un grifo perdiendo agua o una cerradura forzada, ¿qué sueles hacer?
+2. ¿Tienes algún canal directo para avisar de ello sin tener que buscar a un profesor?
+3. ¿Cuánto tiempo has llegado a ver una instalación averiada en el patio o aseos sin reparar?
+4. ¿Utilizarías una aplicación móvil conectada a tu cuenta de iPasen para avisar de estas cosas?
+5. ¿Qué te motivaría a usarla en lugar de ignorar el desperfecto?
 
 ---
 
 # Resultados de las Entrevistas
 
-## 1. Elisa Lucena Urbano
-* **Edad:** 25 años
-* **Perfil:** Tipo B
+## 1. Carmen Ortega
+- **Edad:** 44 años
+- **Ocupación:** Profesora de Secundaria y Bachillerato
+- **Perfil:** Tipo A (Docente)
 
-**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
-Metiéndose en la cuenta del banco y mirándolo.
+**¿Qué haces cuando encuentras un desperfecto?**
+Si es algo del ordenador o del proyector, pierdo cinco o diez minutos probando a reiniciar o tocando cables. Si no funciona, tengo que cambiar de plan y dar la clase con la pizarra tradicional.
 
-**¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)**
-De cabeza, verificando los gastos en la aplicación del banco diariamente; no lleva unas cuentas exactas.
+**¿Qué vía utilizas para avisar del problema?**
+Si me pilla de camino a la sala de profesores bajo a conserjería y lo apunto en el cuaderno azul que tienen en el mostrador. Si voy con prisa a otra clase, le mando un correo al coordinador TIC cuando llego a mi casa por la tarde, o se lo digo si me lo cruzo en el pasillo.
 
-**¿Qué parte de eso te da más pereza?**
-Nada.
+**¿Cuánto tiempo tardas en gestionar ese aviso?**
+Bajar a conserjería me come los cinco minutos de descanso entre clases, así que muchas veces lo voy posponiendo hasta el final de la jornada.
 
-**¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?**
-Sí lo ha mirado. Lo averiguó viendo que había gastado más de lo normal, calculándolo con la calculadora.
+**¿Sabes si el problema ha sido atendido?**
+No, nunca. Me entero cuando vuelvo a entrar a esa clase a la semana siguiente y pruebo a encender el aparato a ver si hay suerte.
 
-**¿Cuánto crees que te queda ahora mismo este mes?**
-450 € desde primero de mes.
+**¿Has dejado de avisar alguna vez por falta de tiempo?**
+Sí, con bastante frecuencia. Sobre todo con persianas atascadas, enchufes sueltos o ratones que fallan. Piensas «ya lo dirá el tutor del aula» y sigues adelante.
 
-**Esos 450 € que me dices: ¿incluyen lo que ya sabes que vas a pagar este mes (alquiler, luz, facturas) o es lo que ves en la cuenta?**
-Sí incluye lo que va a pagar este mes ese dinero.
-
-**La última vez que tuviste un gasto que no esperabas (una factura más alta, un regalo, una reparación), ¿de dónde sacaste el dinero?**
-De la propia cuenta, de los mismos fondos con los que paga las facturas.
-
-**Si te sobran 100 € al final de mes, ¿qué haces con ellos?**
-Se guardan y se ahorran.
-
-**¿Hay algo de tu dinero que te quite la cabeza y de lo que no te haya preguntado?**
-No sabe / no entiende la pregunta.
+**¿Qué le pedirías a una app de incidencias?**
+Que no me obligue a recordar otra contraseña más, que me deje hacer una foto rápida con el móvil y que me avise cuando esté arreglado.
 
 ---
 
-## 2. Clara Romero
-* **Edad:** 24 años
-* **Ocupación:** Dependienta
-* **Perfil:** Tipo A
+## 2. Manuel Domínguez
+- **Edad:** 56 años
+- **Ocupación:** Conserje y Mantenimiento
+- **Perfil:** Tipo B (Mantenimiento)
 
-**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
-Depende de lo que tenga que pagar ese mes.
+**¿A través de qué medios te llegan los avisos?**
+Por todos lados: notas adhesivas en la ventanilla, llamadas por la megafonía interna, el cuaderno de incidencias y profesores que me paran en el patio mientras voy a otra tarea.
 
-**¿Sabes ahora mismo cuánto te queda para gastar este mes?**
-Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiere saber.
+**¿Con qué frecuencia recibes avisos imprecisos?**
+A diario. En conserjería tenemos el cuaderno lleno de notas con tachones. La gente apunta «el grifo del baño no va», pero no te dicen si es el de la planta primera o el del patio, ni si pierde agua o no sale nada. Tengo que cruzar el instituto entero para descubrir qué pasa y luego volver a por las herramientas.
 
-**¿Cuánto crees que te queda esta semana?**
-No sé cuánto me queda, voy un poco al día.
+**¿Cómo organizas y priorizas las tareas pendientes?**
+De cabeza y con las notas del mostrador. Voy primero a lo que parece más urgente (cristales rotos, agua corriendo) o a lo que me pide el equipo directivo. El resto se va quedando en la libreta.
 
-**¿Has intentado alguna vez llevar tus cuentas? ¿Qué pasó?**
-He intentado llevar un control, pero como a veces me escriben para los gastos del veterinario, y otras veces los gatos comen más o tengo que comprar comida para ellos, no llevo un control exhaustivo.
+**¿Qué ocurre cuando varios profesores se quejan de lo mismo?**
+Que pierdo tiempo explicándole a tres personas distintas que ya tengo la pieza pedida y que no puedo hacer nada hasta que llegue el fontanero o la partida presupuestaria.
 
-**¿Cuándo fue la última vez que te quedaste sin dinero antes del día de cobro?**
-Pues sí, el mes pasado.
+**¿Dispones de un registro histórico?**
+No formalmente. Solo hojas arrancadas del cuaderno que acabamos tirando cuando se llena.
 
-**¿De dónde sacaste el dinero la última vez que tuviste un gasto que no esperabas?**
-Tengo una cuenta de ahorro en la que había un dinero y cada vez que necesito lo saco de ahí; es para gastos extraordinarios.
-
-**Si te sobran 100 € al final de mes, ¿qué haces con ellos?**
-Pues seguramente me dé un capricho, que me doy pocos.
+**¿Qué información mínima necesitas?**
+Ubicación exacta con aula o zona, qué elemento falla y una fotografía clara para ver el modelo o el daño antes de desplazarme.
 
 ---
 
-## 3. Flor Comesaña
-* **Edad:** 55 años
-* **Ocupación:** Autónoma
-* **Perfil:** Tipo B
+## 3. Marcos Benítez
+- **Edad:** 21 años
+- **Ocupación:** Alumno de 2º de GS Informática
+- **Perfil:** Tipo C (Alumnado)
 
-**¿Cómo llevas el control de tu dinero, si es que lo llevas?**
-Lo llevo con un Excel; cada dos días agrego los movimientos.
+**¿Qué haces si encuentras un desperfecto?**
+Si es en el aula de informática, me mudo al ordenador de al lado si hay sitio libre. Si es en los baños o en el patio, lo comento con los compañeros pero no hago nada más.
 
-**¿Cómo llevas tus cuentas hoy? (Excel, papel, app...)**
-Con un Excel.
+**¿Tienes un canal directo para avisar?**
+Ninguno. Tendría que ir a secretaría o decírselo a un profesor, y la verdad es que te da corte molestar a un profe de otra asignatura por una cerradura rota o una papelera volcada.
 
-**¿Qué parte de eso te da más pereza?**
-Introducir los gastos.
+**¿Cuánto tiempo has visto una avería sin reparar?**
+El cerrojo del baño de chicos del patio lleva roto desde el primer trimestre. Todo el mundo lo sabe y todo el mundo se queja, pero como nadie te hace caso si lo dices de palabra, nadie lo avisa formalmente. Y en el taller hay monitores con líneas muertas desde el curso anterior.
 
-**¿Alguna vez has mirado en qué se te fue un mes concreto? ¿Cómo lo averiguaste?**
-Sí, revisando el Excel uno por uno hasta que di con los gastos.
+**¿Utilizarías una app conectada a iPasen?**
+Sí, claro. Si entro con mi cuenta de iPasen, escaneo un código o elijo el aula, echo la foto y la mando en 20 segundos, la usaríamos todos.
 
-**¿Cuánto crees que te queda ahora mismo este mes?**
-40 € estando a día 27 de septiembre.
-
-**¿Dónde y cuándo suele mirar las cosas del banco o gastar?**
-En el portátil, en el escritorio a mediodía.
+**¿Qué te motivaría a usarla?**
+Ver que la aplicación sirve de algo: que si reporto que no funciona el proyector o que falta una papelera, a los pocos días vea un tick verde indicando que ya está arreglado.
 
 ---
 
