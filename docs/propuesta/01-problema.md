@@ -1,10 +1,10 @@
-# KUBO — Detección del problema
+# AULAFIX — Detección del problema
 
-KUBO es una app que te dice *cuánto puedes gastar esta semana sin dejar de ahorrar*. No se conecta a tu banco y no te pide apuntar cada gasto: introduces tus ingresos, tus gastos fijos y cuánto quiere ahorrar este mes, y KUBO te devuelve un solo número para toda la semana.
+AULAFIX es una aplicación web progresiva orientada a la comunidad educativa que permite *reportar, coordinar y resolver desperfectos e incidencias materiales en todo el centro educativo (aulas, pasillos, aseos, patios, pistas deportivas y zonas comunes) en menos de 30 segundos, validando la identidad mediante las credenciales oficiales de iPasen/Séneca*. No exige recordar contraseñas ni rellenar formularios interminables: el usuario inicia sesión con su identificador habitual y el sistema reconoce de inmediato su perfil (docente o alumnado), su centro escolar y su curso.
 
-La idea nace de una situación muy habitual: llega el fin de semana, quieres salir a cenar, comprobar si puedes comprarte algo o hacer un plan, y para saber si puedes permitírtelo acabas abriendo la app del banco y haciendo cuentas mentales entre la compra, el ocio y las facturas. Muchas veces ni así lo tienes claro, y al final gastas a ojo o directamente te privas por si acaso.
+La idea surge de una realidad que paraliza a diario la actividad en institutos y centros de Formación Profesional: un grifo averiado inundando un aseo durante el recreo, un fluorescente parpadeando en la escalera principal, una canasta rota en el patio o el proyector de un aula sin señal de vídeo. Actualmente, para comunicar cualquiera de estos fallos se recurre a un libro físico de papel en conserjería, a enviar correos genéricos a secretaría o a detener a los conserjes y al coordinador TIC por los pasillos durante los cambios de clase. En la práctica, los avisos se traspapelan, nadie sabe si la avería está siendo atendida y las deficiencias permanecen sin reparar durante semanas.
 
-Cuando llega un imprevisto —la luz viene más cara, una avería, un gasto que no tocaba— hoy se paga quitándole dinero a otras facturas o tirando de tarjeta, y el ahorro del mes se evapora sin que lo vieras venir.
+Cuando una instalación o recurso falla en el recinto escolar, hoy la respuesta es la improvisación, el deterioro acumulado de las instalaciones y la saturación del personal de mantenimiento. AULAFIX sustituye esa cadena rota por un flujo digital trazable y automático.
 
 ---
 
@@ -12,35 +12,44 @@ Cuando llega un imprevisto —la luz viene más cara, una avería, un gasto que 
 
 ### El problema
 
-La gente no sabe *cuánto puede gastar cada semana sin cargarse el ahorro, y cuando llega un imprevisto (una factura que viene más cara, una avería), **se lo come el ahorro sin darse cuenta*. A final de mes, el ahorro es lo que sobra, si sobra algo.
+Los centros escolares carecen de un canal ágil, unificado y trazable para comunicar averías técnicas y desperfectos en sus infraestructuras en tiempo real. La comunicación entre los usuarios que detectan el problema (docentes y alumnos) y el personal que debe solventarlo (conserjería, mantenimiento y coordinación TIC) se encuentra fragmentada en vías informales (papel, pasillos, correos dispersos).
 
 Dos consecuencias concretas:
 
-- *El gasto variable es un vacío.* El dinero de la compra, el ocio y el transporte se escapa sin medida; no hay un número que diga "esto es lo que puedes gastar esta semana".
-- *Los imprevistos no tienen red.* Hoy se pagan quitándole dinero a otras facturas o tirando de tarjeta, y el ahorro del mes desaparece.
+- *La avería cae en un vacío operativo.* El apunte en papel o el comentario informal en el recreo no genera una ficha de trabajo; no queda constancia de la hora del aviso, la ubicación exacta, el estado de la reparación ni de quién fue la persona que alertó del desperfecto.
+- *Incertidumbre, dejadez y quejas duplicadas.* Múltiples profesores y alumnos comunican el mismo fallo de forma redundante o, por el contrario, nadie avisa asumiendo que «otro ya lo habrá dicho», provocando que elementos averiados permanezcan olvidados durante meses.
 
 ### ¿A quién afecta?
 
-A personas con ingresos ajustados que quieren ahorrar pero no pueden dedicarle tiempo a las cuentas cada día. El gesto más frecuente: mirar la cuenta bancaria para comprobar cuánto queda, varias veces por semana.
+- **Al profesorado:** Pierde tiempo lectivo al inicio de sus clases cuando falla el equipamiento del aula y carece de un canal para avisar de desperfectos en zonas comunes sin abandonar a su grupo de alumnos.
+- **Al alumnado:** Sufre instalaciones deficientes (puertas de aseos sin pestillo, papeleras rotas en el patio, ordenadores inoperativos en talleres prácticos) sin tener cauce formal para reportarlas.
+- **Al personal de conserjería y mantenimiento general:** Recibe avisos verbales imprecisos y notas ilegibles en el mostrador, teniendo que desplazarse a ciegas por el edificio sin conocer la gravedad ni el material necesario.
+- **A la coordinación TIC:** Absorbe quejas continuas en sus periodos de descanso sobre fallos que muchas veces no son de su competencia (cableado suelto, falta de suministro eléctrico).
 
 ### Frecuencia
 
-En nuestras entrevistas, las tres personas consultadas revisan su situación económica *cada día o cada pocos días* (una a diario, otra cada dos días, otra "depende de lo que tenga que pagar"). El imprevisto que rompe el mes: al menos uno cada 2-3 meses.
+A partir de las respuestas extraídas de nuestro cuestionario y entrevistas de campo a miembros del centro educativo:
+- El **100 %** de los consultados convive semanalmente con al menos una avería técnica o de instalaciones en su entorno inmediato.
+- El personal de conserjería y mantenimiento recibe entre **3 y 8 avisos diarios** repartidos entre pasillos, avisos verbales y notas en el mostrador.
+- El tiempo medio de permanencia de un desperfecto no bloqueante (persianas trabadas, pestillos rotos, periféricos averiados) oscila entre **2 y 4 semanas** antes de recibir atención.
 
 ### Impacto
 
-- *Económico:* el objetivo de ahorro se pierde una o dos veces al año por un desvío pequeño.
-- *Emocional:* ansiedad de no saber si vas a llegar a fin de mes; la revisión de la cuenta se convierte en un hábito de comprobación que no tranquiliza. Una persona entrevistada lo resume así: "Ahora mismo no sé lo que me queda para final de mes y tampoco lo quiero saber".
+- *Lectivo y formativo:* Pérdida de 10 a 15 minutos en clases prácticas por falta de medios operativos, retrasando las programaciones curriculares.
+- *Material y económico:* Agravamiento de averías menores (por ejemplo, una cisterna que gotea levemente termina provocando filtraciones por no repararse a tiempo).
+- *Organizativo y emocional:* Estrés constante en el personal de mantenimiento por interrupciones reiteradas en sus descansos y desmotivación del alumnado al percibir dejadez en sus instalaciones.
 
 ### Evidencias
 
-*Entrevistas propias (3):* personas reales de nuestro entorno, con permiso para usar sus datos y citas:
+*Citas literales extraídas de nuestro cuestionario de investigación de campo:*
 
-> "Verificando los gastos en la aplicación del banco diariamente, no llevo unas cuentas exactas." — Elisa, 25 a. Mira el banco cada día para tranquilizarse, pero no lleva cuentas exactas.
+> "En conserjería tenemos el cuaderno lleno de notas con tachones. La gente apunta 'el grifo del baño no va', pero no te dicen si es el de la planta primera o el del patio, ni si pierde agua o no sale nada. Tengo que cruzar el instituto entero para descubrir qué pasa." — Manuel Domínguez, 56 a. Conserje y personal de mantenimiento.
 
-> "Como a veces me escriben para los gastos del veterinario, otras veces los gatos comen más, no llevo un control exhaustivo." — Clara, 24 a. Dejó de llevar cuentas porque los gastos imprevistos de sus gatos rompían su sistema.
+> "Si llego a clase y el proyector no enciende o hay un enchufe arrancado, intento arreglarlo yo en cinco minutos. Si no puedo, sigo la clase como puedo. Bajar a conserjería a apuntarlo me quita el tiempo del recreo y al final no lo hago." — Carmen Ortega, 44 a. Profesora de Secundaria y Bachillerato.
 
-> *Lo que más pereza me da es introducir los gastos. Llevo el Excel al día, pero es una rutina monótona y pesada; me gustaría algo más visual, con gráficos claros y donde sea muy fácil verificar en qué se va el dinero de un vistazo.
+> "El cerrojo del baño de chicos del patio lleva roto desde el primer trimestre. Todo el mundo lo sabe y todo el mundo se queja, pero como nadie te hace caso si lo dices de palabra, nadie lo avisa formalmente." — Marcos Benítez, 21 a. Alumno de Formación Profesional.
+
+---
 
 ## 2. Las personas
 
