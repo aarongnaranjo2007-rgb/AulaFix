@@ -1,3 +1,12 @@
+# Fase 4 · Recursos · FixEdu Studio
+
+## Introducción
+
+Este documento detalla los recursos humanos, técnicos y organizativos necesarios para ejecutar el desarrollo de AULAFIX de forma coordinada, profesional y reproducible.
+
+Define la distribución de responsabilidades técnicas y por módulo para los cuatro integrantes del equipo, formaliza los canales de comunicación, enlaza la arquitectura técnica aprobada en la fase 2 y establece la infraestructura de ramas y gestión de tareas que garantizará que cada línea de código llegue a producción mediante revisiones cruzadas obligatorias.
+
+---
 ## 1. Las personas
 
 ### Roles técnicos
