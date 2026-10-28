@@ -73,11 +73,9 @@ La arquitectura tecnológica, justificación de librerías y límites de los pla
 ### Tablero
 
 El seguimiento de tareas se realiza a través de *GitHub Projects* mediante un tablero Kanban configurado con cinco columnas:
-1. *Backlog:* Historias de usuario y requisitos pendientes de refinamiento.
-2. *Ready (To Do):* Tareas priorizadas listas para que un integrante cree una rama y comience a picar código.
-3. *In Progress:* Tareas en desarrollo activo (máximo 1 tarea activa simultánea por persona).
-4. *In Review:* Pull Request abierto esperando la revisión y aprobación formal de un compañero.
-5. *Done:* Tarea revisada, aprobada y mergeada a la rama correspondiente.
+1. *Todo:* Tareas priorizadas listas para que un integrante cree una rama y comience a picar código.
+2. *In Progress:* Tareas en desarrollo activo (máximo 1 tarea activa simultánea por persona).
+3. *Done:* Tarea revisada, aprobada y mergeada a la rama correspondiente.
 
 ### Ramas y flujo GitFlow
 
