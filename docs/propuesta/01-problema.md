@@ -267,145 +267,126 @@ Ver que la aplicación sirve de algo: que si reporto que no funciona el proyecto
 
 ## 3. La competencia
 
-Seis soluciones existentes. Ninguna resuelve nuestro problema.
+Cinco soluciones analizadas en el mercado y en la práctica educativa. Ninguna cubre la problemática real del centro escolar andaluz.
 
 ---
 
-### Competidor 1 — Goodbudget
+### Competidor 1 — GLPI (Gestionnaire Libre de Parc Informatique)
 
-**Qué hace:** reproduce el método de los sobres en digital.
+**Qué hace:** Software open source para gestión integral de activos tecnológicos e inventario de tickets de soporte técnico IT.
 
-**Fortalezas:** método claro, sin banco, multi-dispositivo, versión web.
+**Fortalezas:** Gran potencia de configuración, control de inventario de componentes y trazabilidad avanzada de contratos y garantías.
 
 **Debilidades:**
+- Interfaz densa, anticuada y sumamente compleja para usuarios no técnicos (docentes de materias no científicas o conserjes).
+- Requiere servidores propios dedicados, bases de datos SQL complejas y mantenimiento de red especializado.
+- Inviable para un reporte en 30 segundos desde un teléfono móvil.
 
-> *"¡Se han borrado todos mis sobres al actualizar la aplicación!"* — App Store, reseña de 1 estrella → [Goodbudget, reseñas de App Store](https://apps.apple.com/us/app/goodbudget-budget-planner/id471112395?see-all=reviews)
+> *"La interfaz de usuario parece congelada en el tiempo hace 15 años. Configurar la herramienta es un dolor de cabeza constante y los usuarios comunes del centro se niegan a abrir tickets porque el formulario tiene decenas de campos incomprensibles para ellos."* — Capterra, reseña de 1 estrella verificada → [GLPI, reseñas de Capterra](https://www.capterra.es/software/100412/glpi#reviews)
 
-> *"Llevo años usando esta aplicación y producto. En algún momento de los últimos 2 o 3 años, arruinaron el proceso de conciliación. Indicaron que implementaron una función que algunos usuarios querían y que está causando esto. Me llevó horas y horas descubrir qué demonios estaba pasando con mi banco... Debido a que GB arruinó el proceso normal de conciliación y descarga de transacciones \"liquidadas\". Mi banco estaba estafando a los clientes ocultando depósitos y reembolsos en los extractos y descargas. Con una conciliación adecuada, que finalmente tuve que hacer MANUALMENTE con más de 8 meses de datos para descubrir dónde se estaban introduciendo los errores. Nunca confíes en un banco, y nunca confíes en un proceso de conciliación defectuoso. Ya no soy usuario..."* — App Store, reseña de 1 estrella → [Goodbudget, reseñas de App Store](https://apps.apple.com/us/app/goodbudget-budget-planner/id471112395?see-all=reviews&platform=iphone)
+**Lo que hace bien y nosotros adaptamos:** La separación de roles entre usuario solicitante y técnico resolutor, con ciclo de estados.
 
-**Lo que hace bien y nosotros repetimos:** la idea de los sobres (topes por categoría).
-
-**Lo que nosotros mejoramos:** no exigir una conciliación manual ni el registro diario de cada gasto; el registro es opcional.
+**Lo que nosotros mejoramos:** Interfaz móvil simplificada y limpia; el usuario reporta en 3 pasos simples sin necesidad de formación previa.
 
 ---
 
-### Competidor 2 — Monefy
+### Competidor 2 — Google Forms + Hojas de Cálculo de Google
 
-**Qué hace:** registro rápido de gastos e ingresos, con categorías y gráficas.
+**Qué hace:** Formularios online distribuidos por enlace web vinculados a un documento compartido de Google Sheets.
 
-**Fortalezas:** apuntar es casi inmediato; diseño visual claro.
+**Fortalezas:** Gratuito, conocido por el profesorado y de creación inmediata sin programar código.
 
 **Debilidades:**
+- **Nula trazabilidad para el usuario:** El profesor o alumno envía el formulario y no vuelve a recibir información sobre el estado de la reparación.
+- **Sin gestión interactiva de ciclo de vida:** Una hoja de cálculo no permite actualizar estados en tiempo real con notificaciones automáticas.
+- **Acumulación descontrolada:** No evita duplicados; ante una avería visible se registran decenas de filas idénticas que colapsan la hoja.
 
-> *"Ufff pésimo servicio. No te ayuda en nada, mezcla las cuentas, tiene apartados supuestamente útiles pero no sirven de nada porque al final del día tú mismo tienes que hacer el cuadre de todo. O sea, hacer las cuentas antes aparte, y luego pasarlas a Monefy, si es el caso, cuál es el chiste de tener la aplicación? Intenté reiniciarla varias veces, pero por alguna razón, continúa teniendo datos que nadie ha introducido, generando errores con tus cuentas de manera inevitable."* — App Store, reseña de 1 estrella → [Monefy, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.monefy.app.lite&hl=es)
+> *"Comenzamos utilizando un formulario de Google para las incidencias de los departamentos y al cabo de dos meses la hoja era un caos absoluto con cientos de entradas repetidas, sin saber qué estaba pendiente y qué se había resuelto hace semanas. Un descontrol."* — Capterra, reseña de 1 estrella sobre Google Workspace / Forms → [Google Forms, reseñas de Capterra](https://www.capterra.es/software/170949/google-forms#reviews)
 
-> *"Antes utilizaba esta aplicación e incluso compré la versión de pago. Ahora es prácticamente inútil si no pagas una suscripción; incluso un Excel es mejor."* — App Store, reseña de 1 estrella → [Monefy, reseñas de App Store](https://apps.apple.com/us/app/monefy-bills-money-tracker/id1212024409?see-all=reviews)
+**Lo que hace bien y nosotros adaptamos:** La rapidez de apertura mediante enlace web o código QR en el centro.
 
-La versión gratuita no se conecta al banco y, además, algunas reseñas describen errores en los datos y la necesidad de revisar las cuentas manualmente.
-
-**Lo que hace bien y nosotros repetimos:** la velocidad de registro (nosotros lo llevamos a 2 toques).
-
-**Lo que nosotros mejoramos:** KUBO calcula un ritmo semanal y prioriza el ahorro, sin obligar al usuario a cuadrar manualmente sus cuentas ni a pagar para utilizar la función principal.
-
----
-
-### Competidor 3 — PocketGuard
-
-**Qué hace:** calcula lo disponible después de facturas y objetivos.
-
-**Fortalezas:** responde exactamente a "¿cuánto me queda?"; maneja objetivos de ahorro.
-
-**Debilidades:**
-
-> *"Pagué la suscripción anual y parecía funcionar de maravilla durante unos meses. Finalmente, después de muchas horas, logré configurar todo correctamente, pero ahora mi banco no actualiza los datos. Es la segunda vez que sucede. Me comuniqué con soporte y se disculparon, diciendo que su equipo técnico estaba trabajando en ello. Después de seis semanas, decidí eliminar la cuenta y empezar de cero; perdí todo mi trabajo. Y ahora ha vuelto a pasar. Dinero y tiempo perdidos... lo cual es un gran problema en esta situación económica, sobre todo cuando intento administrar mi presupuesto."* — App Store, reseña de 1 estrella → [PocketGuard, reseñas de App Store](https://apps.apple.com/us/app/pocketguard-budget-app/id949414211)
-
-La conexión al banco es un requisito y sus reseñas muestran que, cuando la sincronización falla, el usuario puede perder tiempo y trabajo registrado.
-
-**Lo que hace bien y nosotros repetimos:** la promesa de "un número disponible".
-
-**Lo que nosotros mejoramos:** no pedir credenciales bancarias ni depender de la sincronización del banco; el número se calcula con tres datos que el usuario introduce voluntariamente.
+**Lo que nosotros mejoramos:** Control de duplicados en la base de datos de MongoDB, estados en tiempo real y panel interactivo con filtros por zona.
 
 ---
 
-### Competidor 4 — Rata y Fina
+### Competidor 3 — iPasen / Séneca (App oficial de la Junta de Andalucía)
 
-**Qué hace:** app de control de gastos con un tono directo y sincero. Su lema es *"La única que te dice la verdad"*.
+**Qué hace:** Aplicación móvil oficial para la gestión académica, faltas de asistencia, calificaciones y mensajería escolar.
 
 **Fortalezas:**
-- Tono diferenciador: *"Las apps de finanzas te tratan como si fueras de cristal. Fina no."*
-- Presente en App Store y Google Play.
-- Crecimiento rápido: de 5 a 201 valoraciones en pocos meses.
+- Base de datos institucional oficial de todo el profesorado y alumnado de Andalucía.
+- Sistema de autenticación seguro ya instalado en los teléfonos móviles de los usuarios.
 
 **Debilidades:**
-- **Suscripción obligatoria** para todas las funciones: la versión gratuita solo permite registrar un gasto en una sola categoría.
-- Tiene una versión gratuita muy limitada y reserva la mayoría de funciones para la suscripción.
-- Su propuesta se apoya mucho en el tono y en la estética, pero no ofrece una alternativa gratuita completa.
-- El tono directo puede generar rechazo en usuarios que buscan algo más amable.
+- No dispone de ningún apartado ni funcionalidad para la notificación o seguimiento de averías e infraestructuras del centro.
+- La aplicación móvil oficial sufre críticas habituales por inestabilidad, lentitud en la carga y fallos de sesión.
 
-> *"La aplicación es bonita y aparentemente útil, pero al principio no informa de que es de pago. Después del cuestionario obliga a pagar para poder usarla."* — App Store, reseña de 1 estrella → [Rata y Fina, reseñas de App Store](https://apps.apple.com/es/app/rata-y-fina-control-de-gastos/id6787686922?see-all=reviews)
+> *"Una auténtica vergüenza de aplicación. Lenta a más no poder, se queda la pantalla en blanco constantemente, no envía las notificaciones a tiempo y cada vez que actualizan algo rompen otra cosa. Es desesperante tener que depender de esto para el colegio."* — Google Play Store, reseña de 1 estrella → [iPasen, reseñas de Google Play](https://play.google.com/store/apps/details?id=juntadeandalucia.ced.pasen&hl=es)
 
-**Lo que nosotros mejoramos:** KUBO es gratis en su versión base y su tono es amable, no duro.
+> *"Pésima experiencia. Se desconecta sola a cada momento, la navegación es tosca y no aprovecha en absoluto las posibilidades del centro educativo. Muy por detrás de lo que debería ser un servicio público moderno."* — App Store, reseña de 1 estrella → [iPasen, reseñas de App Store](https://apps.apple.com/es/app/ipasen/id686036814?see-all=reviews)
 
----
+**Lo que hace bien y nosotros adaptamos:** Reutilizamos su pasarela de autenticación OAuth2 y extracción de perfil y centro mediante ingeniería inversa.
 
-### Competidor 5 — YNAB (You Need A Budget)
-
-**Qué hace:** la app de presupuesto más conocida del mundo. Método de asignar cada euro a una categoría, con objetivos de ahorro.
-
-**Fortalezas:**
-- Marca enorme, comunidad activa, educación financiera integrada.
-- El ahorro es central: no gastar lo que no tienes.
-
-**Debilidades (reseñas reales de 1 estrella):**
-
-> *"La sincronización con el banco es extremadamente lenta y no se actualiza. A veces pasan días y todavía no muestra los importes correctos ni coincide con la cuenta bancaria. Tampoco es una aplicación fácil de usar."* — App Store, reseña de 1 estrella → [YNAB, reseñas de App Store](https://apps.apple.com/us/app/ynab/id1010865877?see-all=reviews)
-
-> *"No vale la pena, no hace más que lo que hace una hoja de Excel pero por 2.300 MXN al año... De hecho, en una hoja de cálculo puedes registrar cargos parcializados de una tarjeta de crédito; aquí no."* — Google Play, reseña de 1 estrella → [YNAB, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.youneedabudget.evergreen.app&hl=es)
-
-Suscripción de **14,99 $/mes** o **109 $/año**. Las reseñas también señalan problemas de sincronización, cambios de interfaz y un número excesivo de pasos.
-
-**Lo que nosotros mejoramos:** KUBO no exige apuntar nada ni pagar suscripción.
+**Lo que nosotros mejoramos:** Desarrollamos una aplicación web ligera y reactiva con MERN que añade la gestión de incidencias que Séneca no contempla, sin obligar al usuario a memorizar una cuenta nueva.
 
 ---
 
-### Competidor 6 — Fintonic
+### Competidor 4 — Libro físico de incidencias en papel (Conserjería)
 
-**Qué hace:** app española que agrupa cuentas bancarias y clasifica gastos automáticamente.
+**Qué hace:** Cuaderno encuadernado ubicado sobre el mostrador de conserjería donde se anotan las averías a mano.
 
-**Fortalezas:**
-- La más usada en España (más de 100.000 valoraciones en Google Play, 4,4/5).
-- Conexión bancaria real, clasificación automática.
+**Fortalezas:** Accesibilidad física inmediata; no requiere batería, conectividad WiFi ni conocimientos informáticos.
 
-**Debilidades (reseñas reales de 1 estrella):**
+**Debilidades:**
+- **Punto de bloqueo físico:** Obliga al docente a desplazarse físicamente hasta la entrada del edificio, perdiendo su tiempo de descanso.
+- **Sin soporte multimedia:** No admite adjuntar fotografías del desperfecto, códigos de error ni modelos de aparatos.
+- **Pérdida material y letra ilegible:** Partes con tachones, hojas que se pierden y nula capacidad para generar estadísticas o historiales.
 
-> *"No sincroniza los bancos, no puedes hacer previsiones de gastos porque las han quitado. Ver tus movimientos ahora es un infierno porque están ocultos. La han fastidiado."* — App Store, reseña de 1 estrella → [Fintonic, reseñas de App Store](https://apps.apple.com/es/app/fintonic-ahorra-y-fin%C3%A1nciate/id672220319?see-all=reviews)
+**Lo que hace bien y nosotros adaptamos:** Simplicidad conceptual directa.
 
-> *"La puntilla ha sido que se han reseteado todos los movimientos que tenía reclasificados y divididos por conceptos. Todo el trabajo de clasificación de este año y anteriores se ha perdido, y recuperar esa información es prácticamente imposible. Después de tanto tiempo organizando mis finanzas en Fintonic, que desaparezca sin más es el punto y final. No me vuelve a pasar: vuelvo a Excel, donde mis datos y mi trabajo dependen de mí."* — Google Play, reseña de 1 estrella → [Fintonic, reseñas de Google Play](https://play.google.com/store/apps/details?id=com.fintonic&hl=es)
+**Lo que nosotros mejoramos:** Acceso digital desde cualquier punto del centro las 24 horas, soporte fotográfico y geolocalización por espacios.
 
-Requiere **credenciales bancarias** para funcionar y depende de la conexión con las entidades financieras.
+---
 
-**Lo que nosotros mejoramos:** KUBO no pide credenciales ni datos bancarios.
+### Competidor 5 — Jira Service Management / Zendesk
+
+**Qué hace:** Plataformas corporativas de helpdesk para empresas tecnológicas y soporte al cliente multicanal.
+
+**Fortalezas:** Flujos de trabajo altamente configurables, acuerdos de nivel de servicio (SLAs) y cuadros de mando profesionales.
+
+**Debilidades:**
+- **Coste inasumible:** Planes de pago por agente prohibitivos para el presupuesto de un centro educativo público.
+- **Sobredimensionada:** Excesivamente compleja para las necesidades operativas de conserjes y profesores.
+
+> *"Es una plataforma absurdamente compleja para tareas de mantenimiento rutinario. Demasiados botones, configuraciones y notificaciones por correo que nadie lee. Intentamos implementarlo en nuestra institución y los empleados volvieron al papel en un mes."* — Capterra, reseña de 1 estrella → [Jira Service Management, reseñas de Capterra](https://www.capterra.es/software/147385/jira-service-desk#reviews)
+
+**Lo que hace bien y nosotros adaptamos:** El panel de control con tarjetas de estado (tipo Kanban) y asignación a operarios.
+
+**Lo que nosotros mejoramos:** Coste cero (open source), enfocado exclusivamente en las instalaciones de un centro escolar y sin registros empresariales.
 
 ---
 
 ### Oportunidades que deja la competencia
 
-1. **Las soluciones actuales tienen fricciones diferentes:** unas dependen de la sincronización bancaria y otras exigen introducir o revisar los gastos manualmente. **Nuestro hueco:** un número semanal calculado con pocos datos y sin conexión bancaria.
-2. **Aunque algunas aplicaciones tienen metas de ahorro, KUBO las coloca en el centro del presupuesto:** el objetivo se resta antes de calcular cuánto se puede gastar cada semana.
-3. **KUBO propone un colchón de imprevistos con reglas visibles:** ante una subida, el usuario ve qué pasa si la descuenta del colchón, del gasto flexible o de un kubo.
-4. **KUBO explica el número semanal:** muestra de dónde sale y cómo cambia si se modifica un ingreso, un gasto fijo o el objetivo de ahorro.
+1. **Eliminación del registro manual de usuarios:** Mientras que GLPI o Jira exigen crear y mantener manualmente cuentas para cientos de personas, **nuestra oportunidad diferencial es el aprovechamiento de la API de iPasen:** el usuario utiliza sus credenciales educativas oficiales y el backend sincroniza su identidad automáticamente sin altas previas.
+2. **Reducción radical de la fricción de reporte:** Pasar del formulario denso de decenas de campos a un proceso de tres toques: Espacio del centro + Foto + Breve descripción.
+3. **Visibilidad compartida para evitar duplicados:** Si el proyector del Aula 104 o la cisterna del aseo de la planta baja ya están reportados, la interfaz lo muestra de forma destacada para que nadie pierda tiempo duplicando el aviso.
+4. **Trazabilidad bidireccional:** El profesor o alumno recibe confirmación y actualización visual del ticket cuando el conserje interviene en la instalación.
 
-### Resumen
+---
 
-| Competidor | Banco | Apuntar todo | Ahorro primero | Colchón | Explicación |
-|---|---|---|---|---|---|
-| Goodbudget | No | Sí | No | No | No |
-| Monefy | No | Sí | No | No | No |
-| PocketGuard | Sí | No | Parcial | No | No |
-| Rata y Fina | No | Sí | Parcial | No | No |
-| YNAB | Sí | Parcial | Sí | No | Parcial |
-| Fintonic | Sí | No | No | No | No |
-| **KUBO (nosotros)** | **No** | **Opcional** | **Sí** | **Sí** | **Sí** |
+### Resumen comparativo
+
+| Característica | GLPI | Google Forms | Papel (Conserjería) | iPasen nativo | Jira / Zendesk | **AULAFIX (Nosotros)** |
+|---|---|---|---|---|---|---|
+| **Login educativo Séneca/iPasen** | No | No | No | Sí | No | **Sí** |
+| **Tiempo de reporte < 1 min** | No | Parcial | No | No | No | **Sí** |
+| **Subida de fotos del desperfecto** | Sí | Parcial | No | No | Sí | **Sí** |
+| **Seguimiento de estado en vivo** | Sí | No | No | No | Sí | **Sí** |
+| **Detección de averías ya abiertas** | Sí | No | No | No | Sí | **Sí** |
+| **Ámbito centro completo (baños, patios, aulas)** | Sí | Parcial | Sí | No | Sí | **Sí** |
+| **Coste de licencias** | Gratis (autohospedado) | Gratis | Gratis | Gratis | De pago | **Gratis (Open Source)** |
+| **Diseñado para centros escolares** | No | No | Sí | Sí (solo académico) | No | **Sí** |
 
 ---
 
