@@ -159,29 +159,34 @@ Para el alcance del proyecto y su MVP **no necesitamos contratar servidores dedi
 
 ### Autenticación y gestión de sesiones
 
-**Sí, desde el MVP.** El sistema implementa autenticación propia basada en **correo electrónico y contraseña** para permitir la sincronización automática entre dispositivos (móvil y web):
+**Sí, desde el MVP.** El sistema implementa autenticación puente conectando con los servidores oficiales de Séneca/iPasen:
 
-* **Registro e inicio de sesión (Must have):** El usuario se registra e inicia sesión con su email y contraseña (mínimo 8 caracteres). Las contraseñas nunca se almacenan en texto plano; se guardan encriptadas mediante *hash* utilizando **`bcrypt`** (`bcryptjs`).
-* **Gestión de sesiones con JWT:** Al iniciar sesión, el servidor genera un **JSON Web Token (JWT)** firmado con `jsonwebtoken`. El frontend lo guarda y lo envía en cada petición mediante los interceptores de Axios. Configuraremos una **expiración amplia (30 días)** para que el usuario mantenga su sesión abierta en el día a día sin tener que autenticarse constantemente.
-* **Sesión por dispositivo:** Cada dispositivo (móvil y ordenador) guarda su propio token local. Iniciar sesión en el móvil no abre la sesión en el ordenador, pero ambos dispositivos consultan y actualizan exactamente los mismos datos en tiempo real porque están asociados al mismo `usuario_id`.
-* **Recuperación de contraseña (Should have):** Enlace enviado por correo electrónico con un token temporal (`reset_token`) de un solo uso y caducidad de 1 hora para restablecer la clave.
-* **Roles de usuario:** **No existen roles distintos.** Todos los usuarios tienen el mismo nivel de permisos (usuario estándar) y únicamente pueden acceder a sus propios datos financieros, dado que la aplicación es de control personal.
+- **Inicio de sesión contra Séneca (Must have):** El usuario introduce su usuario y contraseña en el cliente de React. El backend en Express realiza una petición `POST` al endpoint oficial descubierto (`https://seneca.juntadeandalucia.es/api/public/security/oauth/token`) enviando las cabeceras requeridas (`User-Agent: iPasen/...`) y rescata el `access_token`.
+- **Sincronización de identidad:** Con el token obtenido, Express consulta `GET generales/info-session`, recupera el nombre completo (`fullname`), rol (`typeProfile`: Alumno o Profesor) y código de centro (`centerCode`), creando o actualizando automáticamente la ficha del usuario en la colección `users` de MongoDB.
+- **Gestión de sesiones propias con JWT:** El backend descarta de inmediato la contraseña del usuario (nunca se almacena en base de datos) y emite un **JSON Web Token (JWT) propio** firmado con una clave secreta (`JWT_SECRET`). Este token contiene el `_id` y el `rol` interno del usuario, y se envía en las cabeceras de cada petición posterior mediante los interceptores de Axios con una **validez de 30 días**.
+- **Modo Mock Educativo (Contingencia para evaluación):** Mediante la variable de entorno `USE_MOCK_AUTH=true`, el backend permite validar usuarios ficticios locales (ej. Carmen Profesora, Manuel Conserje, Marcos Alumno) para poder defender el proyecto ante el profesor incluso si los servidores de la Junta sufren cortes o mantenimientos.
+- **Roles de usuario y control de acceso (RBAC):**
+  - `ALUMNO`: Puede reportar averías en cualquier espacio y consultar exclusivamente sus incidencias creadas.
+  - `PROFESOR`: Puede reportar averías, consultar su historial y ver el listado general de averías activas del centro.
+  - `MANTENIMIENTO` / `CONSERJERIA` / `TIC`: Acceso completo para ver todas las averías, cambiar estados, añadir notas técnicas y clasificar prioridades.
 
 ### Bibliotecas principales de Backend
 
 | Biblioteca | Para qué | Por qué |
 |---|---|---|
-| **Express** | Construcción de la API REST, rutas y *middlewares* | Es el framework estándar de Node.js, ligero y directo para crear endpoints JSON. |
-| **Mongoose** | Modelado de esquemas (ODM) y conexión con MongoDB | Valida la estructura de los documentos antes de guardarlos y simplifica las consultas. |
-| **bcryptjs** | Encriptación de contraseñas | Estándar de seguridad para generar el *hash* de la contraseña antes de guardarla en base de datos. |
-| **jsonwebtoken** | Generación y verificación de tokens JWT | Permite autenticar peticiones de forma *stateless* mediante un *middleware* de rutas privadas. |
-| **cors** y **dotenv** | Seguridad de dominios cruzados y variables de entorno | Necesarios para permitir peticiones desde Vercel y ocultar las claves de conexión fuera del código. |
+| **Express** | Creación del servidor HTTP, enrutamiento REST y gestión de middlewares. | Framework ligero y minimalista de Node.js, ideal para construir la API intermedia y estructurar controladores limpios. |
+| **Mongoose** | Modelado de esquemas (ODM) y conexión con la base de datos MongoDB Atlas. | Permite estructurar y validar los documentos de incidencias y usuarios antes de persistirlos, gestionando relaciones por referencia y subdocumentos. |
+| **jsonwebtoken** | Generación y verificación del token JWT de sesión propia. | Facilita una arquitectura de autenticación desacoplada y *stateless*, verificando la identidad del usuario en cada petición mediante un middleware centralizado. |
+| **multer** | Procesamiento de peticiones `multipart/form-data` para recibir imágenes. | Gestiona la recepción de la fotografía de la avería en la memoria del servidor (buffer) antes de retransmitirla al servicio de almacenamiento. |
+| **cloudinary** | SDK oficial para la subida de imágenes a la nube de Cloudinary. | Permite subir el archivo recibido por multer mediante un flujo de streams y obtener la URL segura (`https`) definitiva para guardarla en MongoDB. |
+| **cors** y **dotenv** | Configuración de orígenes cruzados y gestión de variables de entorno. | Imprescindibles para autorizar peticiones desde el dominio de Vercel y ocultar credenciales secretas (URI de Mongo, Cloudinary Secret, JWT Secret) fuera de Git. |
 
 ### APIs o servicios externos
 
 | Servicio | Para qué | ¿Necesario en el MVP? | Condiciones y límite del plan gratuito |
 |---|---|---|---|
-| **Resend** (o SendGrid) | Envío del correo electrónico con el enlace de recuperación de contraseña. | **No** (corresponde al requisito *Should have* #3; el MVP opera con registro y login directo). | **3.000 emails/mes** (con límite de **100 emails/día**) en el plan gratuito de Resend, suficiente para el proyecto. |
+| **API Oficial iPasen / Séneca** | Validación de credenciales educativas y obtención de perfiles y roles reales. | **Sí** (núcleo del Requisito 1; con alternativa mock desacoplada para contingencias). | Gratuito; infraestructura pública oficial de la Junta de Andalucía descubierta mediante ingeniería inversa. |
+| **Cloudinary** | Almacenamiento y optimización de las fotografías asociadas a las incidencias. | **Sí** (imprescindible para el Requisito 6 del MVP). | **25 créditos mensuales gratuitos** (~25 GB de almacenamiento/transferencia), más que suficiente para el uso escolar. |
 
 ---
 
@@ -189,56 +194,57 @@ Para el alcance del proyecto y su MVP **no necesitamos contratar servidores dedi
 
 ### Esquema preliminar de colecciones principales
 
-El diseño en MongoDB se organiza en **3 colecciones principales**: `users`, `presupuestos` y `movimientos`.
+El diseño en MongoDB se organiza en **3 colecciones principales**: `users`, `incidencias` y `historial_estados`.
 
 #### 1. Colección: `users`
-Almacena la cuenta de cada usuario registrado y los campos de apoyo para la recuperación de contraseña.
+Almacena el perfil de cada miembro de la comunidad educativa sincronizado tras su primer acceso mediante la API de iPasen.
 
 | Campo | Tipo | Descripción / Ejemplo |
 |---|---|---|
 | `_id` | `ObjectId` | Identificador único generado por MongoDB. |
-| `email` | `String` | Correo electrónico único del usuario (`"elisa@email.com"`). |
-| `password_hash` | `String` | Contraseña encriptada con bcrypt (`"$2b$10$..."`). |
-| `reset_token` | `String` / `null` | Token temporal para recuperación de contraseña (por defecto `null`). |
-| `reset_expires` | `Date` / `null` | Fecha de caducidad del token de recuperación (por defecto `null`). |
-| `created_at` | `Date` | Fecha de alta del usuario (`ISODate`). |
+| `seneca_id` | `String` | Identificador único proveniente de Séneca/iPasen (`"12345678Z"`), indexado y único. |
+| `nombre_completo` | `String` | Nombre y apellidos del usuario (`"Carmen Ortega Ramos"`). |
+| `rol` | `String` | Rol en el sistema: `"ALUMNO"`, `"PROFESOR"`, `"MANTENIMIENTO"`, `"ADMIN"`. |
+| `centro_code` | `String` | Código oficial del centro escolar (`"11004567"`). |
+| `curso` | `String` / `null` | Nivel educativo en caso de alumnado (`"2º FP Grado Superior"`) o `null`. |
+| `activo` | `Boolean` | Estado de la cuenta en el sistema (por defecto `true`). |
+| `created_at` | `Date` | Fecha del primer inicio de sesión en la plataforma (`ISODate`). |
 
-#### 2. Colección: `presupuestos` (un documento por usuario y mes)
-Guarda la foto financiera del mes, incluyendo la configuración base, el estado del colchón y los *kubos* embebidos.
+#### 2. Colección: `incidencias`
+Registra cada parte de avería reportado con su estado de resolución, prioridad y ubicación física detallada.
 
 | Campo | Tipo | Descripción / Ejemplo |
 |---|---|---|
-| `_id` | `ObjectId` | Identificador único del presupuesto mensual. |
-| `usuario_id` | `ObjectId` | Referencia al `_id` del usuario en la colección `users`. |
-| `mes` | `String` | Mes y año del presupuesto en formato `YYYY-MM` (`"2026-10"`). |
-| `ingresos` | `Number` | Ingresos mensuales configurados (`1450`). |
-| `gastos_fijos` | `Number` | Suma de gastos fijos mensuales (`780`). |
-| `ahorro_objetivo` | `Number` | Cantidad mensual destinada al ahorro (`200`). |
-| `colchon` | `Object` | Objeto embebido con el estado del colchón: `{ configurado: 30, acumulado: 70, usado: 0 }`. |
-| `kubos` | `Array<Object>` | Lista embebida de categorías con su tope y acumulado: `[{ nombre: "Comida", tope: 250, gastado: 180 }, { nombre: "Ocio", tope: 120, gastado: 45 }]`. |
-| `imprevistos` | `Array<Object>` | Registro de desvíos cubiertos: `[{ fecha: "2026-10-15", importe: 23, origen: "colchon", concepto: "Luz" }]`. |
+| `_id` | `ObjectId` | Identificador único de la incidencia. |
+| `titulo` | `String` | Resumen breve del problema (`"Grifo roto perdiendo agua"`). |
+| `descripcion` | `String` | Explicación detallada del fallo detectado. |
+| `categoria` | `String` | Área técnica: `"TIC"`, `"Fontaneria"`, `"Electricidad"`, `"Mobiliario"`, `"Patios"`. |
+| `ubicacion` | `Object` | Objeto embebido con la localización: `{ tipo: "Banos", planta: "Primera", detalle: "Aseos profesores, lavabo derecho" }`. |
+| `foto_url` | `String` | Enlace seguro a la imagen en Cloudinary (`"https://res.cloudinary.com/.../grifo.jpg"`). |
+| `estado` | `String` | Estado actual: `"Pendiente"`, `"En_Revision"`, `"En_Reparacion"`, `"Resuelta"`, `"Desestimada"`. |
+| `prioridad` | `String` | Nivel de urgencia: `"Baja"`, `"Media"`, `"Alta"`, `"Urgente"` (por defecto `"Media"`). |
+| `reportado_por` | `ObjectId` | Referencia al `_id` del usuario emisor en la colección `users`. |
+| `asignado_a` | `ObjectId` / `null` | Referencia opcional al `_id` del operario encargado en `users`. |
 | `created_at` / `updated_at` | `Date` | Marcas de tiempo de creación y última actualización (`ISODate`). |
 
-#### 3. Colección: `movimientos`
-Registra cada gasto individual con su fecha exacta. Permite calcular el ritmo de gasto de la semana actual en el MVP (Reqs. 9, 10 y 11) y alimenta el historial y la importación CSV en el Modo Detalle.
+#### 3. Colección: `historial_estados`
+Registra cada cambio de estado y nota técnica introducida por el equipo de conserjería o mantenimiento, permitiendo auditoría y trazabilidad cronológica.
 
 | Campo | Tipo | Descripción / Ejemplo |
 |---|---|---|
-| `_id` | `ObjectId` | Identificador único del movimiento. |
-| `usuario_id` | `ObjectId` | Referencia al `_id` del propietario en `users`. |
-| `presupuesto_id` | `ObjectId` | Referencia al `_id` del mes correspondiente en `presupuestos`. |
-| `mes` | `String` | Mes al que pertenece el gasto (`"2026-10"`). |
-| `fecha` | `Date` | Fecha exacta del gasto (`"2026-10-20"`) para calcular la semana en curso. |
-| `categoria` | `String` | Nombre del *kubo* al que se imputa (`"Comida"`). |
-| `importe` | `Number` | Cantidad gastada (`45.20`). |
-| `es_imprevisto` | `Boolean` | Indica si el gasto se descuenta del colchón de imprevistos (`false`). |
-| `origen` | `String` | Procedencia del dato: `"registro"` (en 2 toques) o `"csv"` (importado). |
+| `_id` | `ObjectId` | Identificador único del evento de cambio de estado. |
+| `incidencia_id` | `ObjectId` | Referencia al `_id` de la avería correspondiente en `incidencias`. |
+| `usuario_id` | `ObjectId` | Referencia al `_id` del usuario de mantenimiento que realizó el cambio en `users`. |
+| `estado_anterior` | `String` | Estado previo de la incidencia (`"Pendiente"`). |
+| `estado_nuevo` | `String` | Nuevo estado asignado (`"En_Reparacion"`). |
+| `nota_tecnica` | `String` / `null` | Comentario interno del técnico (`"Cortada llave de paso; esperando zapata"`). |
+| `fecha` | `Date` | Fecha y hora exacta del cambio de estado (`ISODate`). |
 
 ### Relaciones entre colecciones
 
-* **De `users` a `presupuestos` (1:N por referencia):** El campo `presupuestos.usuario_id` relaciona cada presupuesto mensual con su propietario en la colección `users`.
-* **Dentro de `presupuestos` (Embebido):** `presupuestos.kubos`, `presupuestos.colchon` y `presupuestos.imprevistos` son objetos y arrays embebidos directamente en el documento del mes. No requieren otra colección porque son pocos elementos por mes y siempre se consultan junto con el presupuesto en la pantalla principal.
-* **De `presupuestos` a `movimientos` (1:N por referencia):** Cada gasto registrado en `movimientos` se vincula al usuario (`usuario_id`) y al mes (`presupuesto_id`), actualizando a su vez el acumulado `gastado` del *kubo* correspondiente. Se mantiene en una colección separada para poder filtrar gastos por semanas y soportar la futura carga de extractos CSV sin sobrecargar el documento mensual.
+- **De `users` a `incidencias` (1:N por referencia):** El campo `incidencias.reportado_por` vincula cada avería con su creador real en `users`. Permite mostrar al usuario solo sus avisos y reflejar en conserjería quién abrió cada parte.
+- **Dentro de `incidencias` (Embebido):** `incidencias.ubicacion` es un objeto embebido dentro del propio documento de la avería. No requiere una colección separada porque la localización es un atributo propio e inmutable de la incidencia que siempre se consulta junto a ella.
+- **De `incidencias` a `historial_estados` (1:N por referencia):** Cada cambio de estado genera un documento en `historial_estados` referenciando el `incidencia_id`. Se mantiene separado para evitar que el documento principal de la incidencia crezca de forma desmedida y para agilizar las consultas del panel principal.
 
 # Capacidades del equipo, riesgos y la introducción que une todo
 
