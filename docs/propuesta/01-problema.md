@@ -394,14 +394,20 @@ Cinco soluciones analizadas en el mercado y en la práctica educativa. Ninguna c
 
 ### Problema actual
 
-A jugadores habituales de PC les cuesta decidir qué videojuego jugar porque tienen demasiadas opciones. Hoy suelen navegar por Steam, buscar listas genéricas o preguntar en Discord, pero estas soluciones no combinan de forma rápida su contexto actual: si están solos o con amigos, cuántas personas son, qué plataforma usan, qué género quieren y cuánto tiempo tienen.
+Al profesorado, alumnado y personal de mantenimiento de los centros educativos les ocurre que sufren retrasos lectivos, deterioro de instalaciones y sobrecarga organizativa debido a que las averías e incidencias materiales del recinto (aulas, pasillos, baños, patios) quedan sin resolver durante semanas o caen en el olvido.
+
+Hoy utilizan cuadernos físicos en conserjería, correos dispersos a secretaría o avisos verbales por los pasillos; canales que fallan en la ausencia total de trazabilidad, la lentitud burocrática, la saturación del personal de mantenimiento y la duplicación reiterada de quejas sobre el mismo desperfecto.
 
 ### Propuesta de valor
 
-> A los jugadores de PC que no saben a qué jugar les ocurre que pierden tiempo navegando entre bibliotecas grandes o discutiendo con amigos. Hoy usan Steam, Epic, búsquedas y Discord, pero esas herramientas no les dan una recomendación inmediata según su situación. PlayNext ofrece recomendaciones de videojuegos explicables y aleatorias, filtradas por modo individual o grupo, número de jugadores, plataforma, género y tiempo disponible.
+> **A la comunidad educativa (profesorado, alumnado y personal de mantenimiento) que convive a diario con desperfectos en su centro escolar** le ocurre que **pierde tiempo de clase y sufre instalaciones deterioradas porque los avisos se traspapelan y no tienen seguimiento.**
+>
+> **Hoy usa** **el cuaderno de conserjería, correos electrónicos aislados o avisos verbales de pasillo**, que fallan en **la nula trazabilidad, la falta de información técnica sobre la avería y la duplicidad constante de reportes.**
+>
+> **AULAFIX ofrece** **una aplicación web ágil en stack MERN que permite reportar cualquier avería del centro en menos de 30 segundos iniciando sesión con las claves oficiales de Séneca/iPasen, adjuntando fotografía, geolocalizando el espacio y realizando el seguimiento del ticket en tiempo real hasta su resolución física.**
 
 ### Diferenciación
 
-PlayNext no pretende sustituir Steam, Epic Games ni una base de datos de videojuegos. Su objetivo es resolver un momento muy concreto: *elegir rápidamente qué jugar ahora*.
+AULAFIX no pretende sustituir las competencias curriculares ni administrativas de Séneca, ni actuar como un ERP corporativo sobredimensionado para multinacionales. Su objetivo es resolver un problema físico urgente: *abrir, ubicar y atender un parte de avería en las instalaciones del centro en menos de medio minuto*.
 
-El MVP permite usar la aplicación sin cuenta y guarda favoritos y descartados de forma local. La integración con bibliotecas de Steam/Epic y el cálculo de títulos compartidos se plantean como evolución futura, porque los usuarios muestran interés, pero también preocupación por seguridad y permisos.
+El Producto Mínimo Viable (MVP) se apoya en un backend de Node.js y Express que valida las credenciales directamente contra los endpoints oficiales de iPasen analizados mediante ingeniería inversa (`security/oauth/token` e `info-session`). Esto permite al centro comenzar a operar sin migraciones previas de usuarios ni contraseñas adicionales, mientras que la gestión de incidencias, estados y fotografías reside de manera ágil y desacoplada en MongoDB Atlas.
