@@ -269,21 +269,21 @@ Tecnologías y conceptos que debemos aprender o reforzar para construir el MVP y
 
 | Tecnología o concepto | A quién le falta | Cómo lo cubriremos |
 |---|---|---|
-| *Zustand* (estado global en React) | Todo el equipo | Documentación oficial y creación de un store de prueba en la primera semana; es ligero y directo. |
-| *MongoDB Atlas* (clúster, usuario, conexión con Mongoose) | Miembros 1, 2 | El Miembro 3 configurará el clúster inicial y explicará el paso a paso; documentaremos la conexión en un .env.example. |
-| *Despliegue en Vercel y Render* (variables de entorno y CORS) | Todo el equipo | Documentación oficial y hacer un deploy de prueba en la primera semana para dejar resueltos los permisos CORS. |
-| *Tailwind CSS* (clases utilitarias) | Todo el equipo | Guía de referencia oficial y apoyo de los Miembros 1 y 2 revisando los componentes visuales. |
-| *Autenticación JWT + Interceptores en Axios* |  Todo el equipo | Seguir un flujo estándar paso a paso para conectar el middleware de Express con el cliente de React antes de crear las pantallas. |
+| *Petición proxy a Séneca y spoofing de User-Agent* | Todo el equipo | Gabriel investigará el módulo de login con Axios en Node.js reproduciendo el curl del APK y compartirá un endpoint funcional en la primera semana. |
+| *Subida de imágenes con Multer y Cloudinary* | Aarón, Álvaro, David | Seguir la documentación oficial de Cloudinary SDK para Express; Gabriel preparará el middleware base de subida. |
+| *Zustand* (gestión de estado de sesión y rol) | Todo el equipo | Documentación oficial y creación de una tienda simple de prueba para almacenar el token JWT y el rol del usuario. |
+| *Tailwind CSS* (maquetación mobile-first) | Aarón, Álvaro, David | Guía de referencia rápida y apoyo de Gabriel para estructurar las tarjetas de incidencias y los selectores de ubicación. |
+| *Rutas protegidas con React Router v6* | Todo el equipo | Implementar un componente `<ProtectedRoute allowedRoles={[...]} />` para separar las vistas de Alumnos de las de Conserjería. |
 
 ---
 
 ### ¿Es realista completar el proyecto a tiempo?
 
-*Sí, es realista completar el proyecto en el tiempo disponible porque hemos acotado estrictamente el MVP a los 8 requisitos *Must have.**
+*Sí, es realista completar el proyecto en el tiempo disponible porque hemos acotado estrictamente el MVP a los 8 requisitos *Must have.***
 
-* *Alcance controlado:* Hemos dejado fuera del MVP las funciones que requerían mayor carga de desarrollo (la importación y clasificación automática de CSV queda en Could have, las gráficas con Recharts en Could have y el simulador de imprevistos en Should have).
-* *Complejidad técnica asumible:* El núcleo del MVP se resuelve con operaciones CRUD estándar (usuarios, presupuesto mensual y movimientos) y aritmética básica (ingresos menos gastos fijos y ahorro objetivo, divididos entre las semanas del mes).
-* *Plan de contingencia:* Si la curva de aprendizaje de React o Express nos consume más tiempo del previsto, nos centraremos únicamente en asegurar que el recorrido de Elisa (los 8 Must have) funcione de principio a fin en producción, descartando los requisitos Should y Could have.
+- *Alcance controlado:* Hemos dejado fuera del MVP las tareas más pesadas o accesorias (la exportación a CSV y métricas avanzadas quedan en Could have, el escáner de códigos QR en Could have y las notas técnicas detalladas en Could have).
+- *Complejidad técnica asumible:* El núcleo del MVP se resuelve con un flujo CRUD clásico sobre MongoDB (crear incidencia, listar incidencias y actualizar estado) combinado con la subida de una imagen y una pasarela de autenticación que solo requiere consultar dos endpoints de iPasen (`oauth/token` e `info-session`).
+- *Plan de contingencia:* Si la conexión directa con los servidores de Séneca presenta problemas técnicos o bloqueos imprevistos, activaremos de inmediato el modo *Mock Educativo* local, garantizando que el tribunal docente pueda evaluar el 100% de la funcionalidad de la app sin retrasos.
 
 ---
 
@@ -291,12 +291,12 @@ Tecnologías y conceptos que debemos aprender o reforzar para construir el MVP y
 
 | # | Riesgo | Probabilidad | Impacto | Mitigación |
 |---|---|---|---|---|
-| 1 | *El backend se duerme en Render* (el plan gratuito apaga el servidor tras 15 min de inactividad y tarda ~40 s en despertar) | Alta | Bajo | Mostrar un aviso claro en la pantalla de carga ("Conectando con el servidor...") y lanzar una petición ligera de comprobación (/api/health) nada más abrir la app. |
-| 2 | *El equipo no domina React y Zustand a tiempo* | Media | Alto | Empezar maquetando las vistas con datos fijos de prueba (mocks) antes de conectar con el backend y hacer pair programming en los bloqueos. |
-| 3 | *Fallos de conexión con MongoDB Atlas o bloqueos de CORS entre Vercel y Render* | Media | Alto | Configurar el clúster de Atlas (permitiendo la IP 0.0.0.0/0) y hacer el primer despliegue conectado entre Vercel y Render en la primera semana, no al final. |
-| 4 | *El envío de emails de recuperación de contraseña falla o se bloquea* | Media | Medio | Al ser un requisito Should have, no bloquea el MVP. Se probará en un entorno aislado con el plan gratuito de Resend antes de integrarlo en la rama principal. |
-| 5 | *Desviación del alcance (*scope creep)* por querer abarcar demasiadas funciones a la vez | Alta | Alto | Mantener la lista de *Won't have por escrito y no abrir ninguna tarea de Should o Could have hasta que los 8 Must have estén terminados y desplegados. |
-| 6 | *Conflictos de *merge en Git y rotura de la rama main* al trabajar 4 personas en paralelo | Media | Medio | Respetar estrictamente el flujo issue → rama → PR → review → merge, trabajando en ficheros separados y prohibiendo hacer *merge de un PR propio. |
+| 1 | *Inestabilidad o bloqueos en la API externa de Séneca/iPasen* | Media | Crítico | Crear desde el día uno un modo mock en Express (`USE_MOCK_AUTH=true`) con usuarios precargados (profesor, conserje, alumno) para trabajar y defender el proyecto sin depender de la Junta. |
+| 2 | *El backend se duerme en Render* (el plan gratuito apaga el servidor tras 15 min de inactividad y tarda ~40 s en despertar) | Alta | Bajo | Mostrar un mensaje claro en la pantalla de carga (*"Conectando con el servidor..."*) y configurar un ping periódico con un cron gratuito a `/api/health` durante las horas lectivas. |
+| 3 | *Agotamiento de almacenamiento o fallos de subida de fotos en Cloudinary* | Baja | Medio | Comprimir las imágenes en el navegador del cliente antes de enviarlas (máximo 500 KB) con `browser-image-compression` y limitar el tamaño del archivo en Multer a 2 MB. |
+| 4 | *El equipo no domina React y Tailwind a tiempo para el MVP* | Media | Alto | Comenzar maquetando las pantallas clave con datos de prueba (*mocks* estáticos) antes de enlazar con la API y programar sesiones de programación por parejas (*pair programming*). |
+| 5 | *Desviación del alcance (*scope creep)* por querer abarcar inventarios completos o chat interno* | Alta | Alto | Mantener la lista de *Won't have* por escrito de forma estricta: nadie abre tareas de Should o Could have hasta que los 8 Must have estén desplegados y probados. |
+| 6 | *Conflictos de merge en Git y rotura de la rama main al trabajar 4 personas en paralelo* | Media | Medio | Respetar estrictamente el flujo issue ➔ rama ➔ PR ➔ review cruzada ➔ merge, manteniendo el código repartido en módulos claros y prohibiendo mergear PRs propios. |
 
 ---
 
@@ -304,6 +304,6 @@ Tecnologías y conceptos que debemos aprender o reforzar para construir el MVP y
 
 Con la fase 1 cerrada, toca responder la segunda pregunta: *¿podemos construirlo?*. La respuesta corta es sí; la larga está en este documento.
 
-El MVP de *KUBO* se apoya en cuatro pilares técnicos: un frontend en React con Tailwind CSS que muestra el número semanal disponible, un backend en Node.js y Express con autenticación por correo electrónico y JWT, MongoDB Atlas para guardar y sincronizar los datos en tiempo real entre móvil y ordenador, y un registro rápido de gastos en 2 toques. Toda la lógica es aritmética básica —ingresos menos gastos fijos menos ahorro objetivo, repartidos entre las semanas del mes—, lo que lo hace realista para el tiempo disponible y las capacidades actuales del equipo.
+El MVP de *AULAFIX* se apoya en cuatro pilares técnicos: un frontend en React con Tailwind CSS optimizado para su uso en smartphones en cualquier rincón del centro, un backend en Node.js y Express que actúa como pasarela contra la API de Séneca/iPasen emitiendo tokens JWT propios, una base de datos en MongoDB Atlas para persistir de forma estructurada los partes de averías y sus estados, y un servicio multimedia en Cloudinary para almacenar las fotos reales de los desperfectos. La lógica central es un ciclo de vida limpio y directo —reporte con ubicación y foto, inspección por el personal de mantenimiento y cambio de estado a resuelto—, lo que lo hace completamente viable para el tiempo disponible y las capacidades actuales del equipo.
 
-Este documento recoge los requisitos funcionales priorizados con el método MoSCoW, las decisiones técnicas de frontend, backend, base de datos e infraestructura, la evaluación de capacidades del equipo y los riesgos identificados con sus estrategias de mitigación. Lo que aquí se decide nos da una base sólida para empezar a construir y se podrá ajustar en fases posteriores según avance el desarrollo.
+Este documento recoge los 18 requisitos funcionales priorizados con el método MoSCoW, las decisiones de frontend, backend, base de datos e infraestructura gratuita, la evaluación de habilidades del equipo y la matriz de riesgos técnicos con planes de mitigación previos. Lo que aquí se decide nos proporciona una base técnica sólida para empezar a programar y se podrá ajustar de forma controlada a medida que avance el desarrollo.
