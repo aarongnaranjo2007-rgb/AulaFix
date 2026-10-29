@@ -72,7 +72,7 @@ La arquitectura tecnológica, justificación de librerías y límites de los pla
 
 ### Tablero
 
-El seguimiento de tareas se realiza a través de *GitHub Projects* mediante un tablero Kanban configurado con cinco columnas:
+El seguimiento de tareas se realiza a través de *GitHub Projects* mediante un tablero Kanban configurado con tres columnas:
 1. *Todo:* Tareas priorizadas listas para que un integrante cree una rama y comience a picar código.
 2. *In Progress:* Tareas en desarrollo activo (máximo 1 tarea activa simultánea por persona).
 3. *Done:* Tarea revisada, aprobada y mergeada a la rama correspondiente.
