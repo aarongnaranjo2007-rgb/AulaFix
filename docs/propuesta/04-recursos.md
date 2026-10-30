@@ -1,4 +1,4 @@
-# Fase 4 · Recursos · FixEdu Studio
+# Fase 4 · Recursos · EquipoFaltador
 
 ## Introducción
 
@@ -96,7 +96,7 @@ Tanto main como develop están configuradas en Settings → Branches con las sig
 
 ### Estructura de carpetas
 
-El repositorio de AULAFIX adopta una estructura de monorepositorio ligero desacoplado:
+El repositorio de AulaFix adopta una estructura de monorepositorio ligero desacoplado:
 
 ```text
 aulafix/
