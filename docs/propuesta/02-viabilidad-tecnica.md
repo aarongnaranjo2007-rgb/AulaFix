@@ -93,7 +93,7 @@ Este recorrido se construye **única y exclusivamente con los 8 requisitos Must 
 ### Recorrido del MVP
 
 1. **Inicio de sesión y sincronización (Reqs. 1 y 2 — 15 segundos):**
-   - Carmen abre AULAFIX desde el navegador de su móvil y pulsa «Acceder con iPasen».
+   - Carmen abre AulaFix desde el navegador de su móvil y pulsa «Acceder con iPasen».
    - Introduce su usuario y contraseña habituales de Séneca. El backend valida contra la API institucional, detecta su rol (*Docente*) y sincroniza su ficha en la base de datos sin obligarla a rellenar ningún formulario de registro.
 
 2. **Selección de ubicación y categorización (Reqs. 4 y 5 — 10 segundos):**
