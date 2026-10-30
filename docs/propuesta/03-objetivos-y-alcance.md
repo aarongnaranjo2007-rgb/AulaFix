@@ -1,3 +1,12 @@
+# Fase 3 · Objetivos y alcance · EquipoFaltador
+
+## Introducción
+
+Una vez delimitado el problema de la gestión de incidencias en centros educativos (01-problema.md) y confirmada la viabilidad técnica de su integración con la API de iPasen y la arquitectura MERN (02-viabilidad-tecnica.md), este documento acota con precisión qué metas persigue AulaFix, hasta dónde llega su desarrollo para la defensa final y qué funcionalidades quedan expresamente reservadas para fases posteriores.
+
+El propósito de AulaFix no es abarcar la burocracia académica de Séneca ni competir con software de gestión de activos de grandes corporaciones, sino proporcionar una herramienta ágil, móvil y trazable que resuelva el momento crítico de la detección y subsanación de averías en cualquier dependencia del centro escolar.
+
+---
 ## 1. Objetivos
 
 ### Objetivo general

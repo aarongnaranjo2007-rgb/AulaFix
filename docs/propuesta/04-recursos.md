@@ -1,3 +1,12 @@
+# Fase 4 · Recursos · EquipoFaltador
+
+## Introducción
+
+Este documento detalla los recursos humanos, técnicos y organizativos necesarios para ejecutar el desarrollo de AULAFIX de forma coordinada, profesional y reproducible.
+
+Define la distribución de responsabilidades técnicas y por módulo para los cuatro integrantes del equipo, formaliza los canales de comunicación, enlaza la arquitectura técnica aprobada en la fase 2 y establece la infraestructura de ramas y gestión de tareas que garantizará que cada línea de código llegue a producción mediante revisiones cruzadas obligatorias.
+
+---
 ## 1. Las personas
 
 ### Roles técnicos
@@ -59,3 +68,74 @@ La arquitectura tecnológica, justificación de librerías y límites de los pla
 | *Control de versiones y tablero* | *GitHub + GitHub Projects* | Trazabilidad completa mediante Issues vinculadas a Pull Requests con comprobaciones de estado automáticas. |
 
 ---
+## 3. La gestión
+
+### Tablero
+
+El seguimiento de tareas se realiza a través de *GitHub Projects* mediante un tablero Kanban configurado con tres columnas:
+1. *Todo:* Tareas priorizadas listas para que un integrante cree una rama y comience a picar código.
+2. *In Progress:* Tareas en desarrollo activo (máximo 1 tarea activa simultánea por persona).
+3. *Done:* Tarea revisada, aprobada y mergeada a la rama correspondiente.
+
+### Ramas y flujo GitFlow
+
+A partir del inicio del desarrollo, el repositorio implementa una estrategia de ramas estructurada:
+
+- *main:* Contiene exclusivamente código en estado de producción estable. Solo recibe código al cerrar formalmente cada Sprint mediante un Pull Request desde develop.
+- *develop:* Rama base de integración continua. Todas las tareas parten de ella y vuelven a ella mediante PR.
+- *Ramas de trabajo:*
+  - feature/<nombre-tarea>: Para nuevos requisitos o componentes.
+  - fix/<nombre-bug>: Para corrección de errores detectados.
+  - docs/<nombre-documento>: Para ampliación o ajuste de documentación.
+
+#### Reglas de protección de ramas en GitHub
+Tanto main como develop están configuradas en Settings → Branches con las siguientes protecciones obligatorias:
+- *Require a pull request before merging:* Prohibidos los commits directos (push) a main y develop.
+- *Require approvals (mínimo 1):* Nadie puede mergear su propio PR. Es indispensable el Approve con comentario de revisión de otro miembro.
+- *Dismiss stale pull request approvals:* Si se suben nuevos commits a una rama en revisión, la aprobación anterior se anula automáticamente.
+
+### Estructura de carpetas
+
+El repositorio de AulaFix adopta una estructura de monorepositorio ligero desacoplado:
+
+```text
+aulafix/
+├── .github/
+│   └── workflows/              # Acciones automatizadas de GitHub Actions (tests y linter)
+├── client/                     # Frontend (React 18 + Vite + Tailwind CSS)
+│   ├── public/                 # Favicon, manifiesto PWA e iconos estáticos
+│   ├── src/
+│   │   ├── assets/             # Logotipos y recursos gráficos
+│   │   ├── components/         # Componentes UI reutilizables (Botones, Modales, Tarjetas)
+│   │   ├── context/            # Stores de Zustand o contextos globales
+│   │   ├── hooks/              # Custom hooks (uso de cámara, llamadas a API)
+│   │   ├── pages/              # Vistas de la aplicación (Login, Incidencias, Detalle, Panel)
+│   │   ├── services/           # Clientes HTTP Axios con interceptores
+│   │   ├── App.jsx             # Enrutamiento principal con React Router
+│   │   └── main.jsx            # Punto de entrada de la aplicación
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md               # Instrucciones específicas de arranque del frontend
+├── server/                     # Backend (Node.js + Express + MongoDB)
+│   ├── src/
+│   │   ├── config/             # Conexión a MongoDB Atlas y variables de entorno
+│   │   ├── controllers/        # Controladores de incidencias, autenticación y usuarios
+│   │   ├── middlewares/        # Middlewares de autenticación JWT y control de roles
+│   │   ├── models/             # Esquemas de Mongoose (User, Incidencia, Historial)
+│   │   ├── routes/             # Enrutadores de la API REST (/api/auth, /api/incidencias)
+│   │   ├── services/           # Servicios externos (proxy de Séneca/iPasen y mock data)
+│   │   └── server.js           # Inicialización del servidor Express y sockets
+│   ├── tests/                  # Tests automatizados de endpoints con Jest y Supertest
+│   ├── package.json
+│   └── README.md               # Instrucciones específicas de arranque del backend
+├── docs/                       # Documentación formal del proyecto
+│   ├── CONTRATO.md             # Contrato de equipo y normas de trabajo
+│   └── propuesta/
+│       ├── 00-brainstorming.md
+│       ├── 01-problema.md
+│       ├── 02-viabilidad-tecnica.md
+│       ├── 03-objetivos-y-alcance.md
+│       └── 04-recursos.md
+├── .gitignore                  # Exclusión de node_modules, .env y compilados
+├── .nvmrc                      # Versión de Node.js fijada (v20)
+└── README.md                   # Presentación global del proyecto y del estudio
