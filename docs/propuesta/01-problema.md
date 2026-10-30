@@ -1,10 +1,10 @@
-# AULAFIX — Detección del problema
+# AulaFix — Detección del problema
 
-AULAFIX es una aplicación web progresiva orientada a la comunidad educativa que permite *reportar, coordinar y resolver desperfectos e incidencias materiales en todo el centro educativo (aulas, pasillos, aseos, patios, pistas deportivas y zonas comunes) en menos de 30 segundos, validando la identidad mediante las credenciales oficiales de iPasen/Séneca*. No exige recordar contraseñas ni rellenar formularios interminables: el usuario inicia sesión con su identificador habitual y el sistema reconoce de inmediato su perfil (docente o alumnado), su centro escolar y su curso.
+AulaFix es una aplicación web progresiva orientada a la comunidad educativa que permite *reportar, coordinar y resolver desperfectos e incidencias materiales en todo el centro educativo (aulas, pasillos, aseos, patios, pistas deportivas y zonas comunes) en menos de 30 segundos, validando la identidad mediante las credenciales oficiales de iPasen/Séneca*. No exige recordar contraseñas ni rellenar formularios interminables: el usuario inicia sesión con su identificador habitual y el sistema reconoce de inmediato su perfil (docente o alumnado), su centro escolar y su curso.
 
 La idea surge de una realidad que paraliza a diario la actividad en institutos y centros de Formación Profesional: un grifo averiado inundando un aseo durante el recreo, un fluorescente parpadeando en la escalera principal, una canasta rota en el patio o el proyector de un aula sin señal de vídeo. Actualmente, para comunicar cualquiera de estos fallos se recurre a un libro físico de papel en conserjería, a enviar correos genéricos a secretaría o a detener a los conserjes y al coordinador TIC por los pasillos durante los cambios de clase. En la práctica, los avisos se traspapelan, nadie sabe si la avería está siendo atendida y las deficiencias permanecen sin reparar durante semanas.
 
-Cuando una instalación o recurso falla en el recinto escolar, hoy la respuesta es la improvisación, el deterioro acumulado de las instalaciones y la saturación del personal de mantenimiento. AULAFIX sustituye esa cadena rota por un flujo digital trazable y automático.
+Cuando una instalación o recurso falla en el recinto escolar, hoy la respuesta es la improvisación, el deterioro acumulado de las instalaciones y la saturación del personal de mantenimiento. AulaFix sustituye esa cadena rota por un flujo digital trazable y automático.
 
 ---
 
