@@ -53,7 +53,7 @@ A partir de las respuestas extraídas de nuestro cuestionario y entrevistas de c
 
 ## 2. Las personas
 
-Tres personas reales de nuestro centro educativo con roles distintos frente al sistema. Sus respuestas al cuestionario justifican cada módulo y funcionalidad de AULAFIX.
+Tres personas reales de nuestro centro educativo con roles distintos frente al sistema. Sus respuestas al cuestionario justifican cada módulo y funcionalidad de AulaFix.
 
 ---
 
@@ -377,7 +377,7 @@ Cinco soluciones analizadas en el mercado y en la práctica educativa. Ninguna c
 
 ### Resumen comparativo
 
-| Característica | GLPI | Google Forms | Papel (Conserjería) | iPasen nativo | Jira / Zendesk | **AULAFIX (Nosotros)** |
+| Característica | GLPI | Google Forms | Papel (Conserjería) | iPasen nativo | Jira / Zendesk | **AulaFix (Nosotros)** |
 |---|---|---|---|---|---|---|
 | **Login educativo Séneca/iPasen** | No | No | No | Sí | No | **Sí** |
 | **Tiempo de reporte < 1 min** | No | Parcial | No | No | No | **Sí** |
@@ -404,10 +404,10 @@ Hoy utilizan cuadernos físicos en conserjería, correos dispersos a secretaría
 >
 > **Hoy usa** **el cuaderno de conserjería, correos electrónicos aislados o avisos verbales de pasillo**, que fallan en **la nula trazabilidad, la falta de información técnica sobre la avería y la duplicidad constante de reportes.**
 >
-> **AULAFIX ofrece** **una aplicación web ágil en stack MERN que permite reportar cualquier avería del centro en menos de 30 segundos iniciando sesión con las claves oficiales de Séneca/iPasen, adjuntando fotografía, geolocalizando el espacio y realizando el seguimiento del ticket en tiempo real hasta su resolución física.**
+> **AulaFix ofrece** **una aplicación web ágil en stack MERN que permite reportar cualquier avería del centro en menos de 30 segundos iniciando sesión con las claves oficiales de Séneca/iPasen, adjuntando fotografía, geolocalizando el espacio y realizando el seguimiento del ticket en tiempo real hasta su resolución física.**
 
 ### Diferenciación
 
-AULAFIX no pretende sustituir las competencias curriculares ni administrativas de Séneca, ni actuar como un ERP corporativo sobredimensionado para multinacionales. Su objetivo es resolver un problema físico urgente: *abrir, ubicar y atender un parte de avería en las instalaciones del centro en menos de medio minuto*.
+AulaFix no pretende sustituir las competencias curriculares ni administrativas de Séneca, ni actuar como un ERP corporativo sobredimensionado para multinacionales. Su objetivo es resolver un problema físico urgente: *abrir, ubicar y atender un parte de avería en las instalaciones del centro en menos de medio minuto*.
 
 El Producto Mínimo Viable (MVP) se apoya en un backend de Node.js y Express que valida las credenciales directamente contra los endpoints oficiales de iPasen analizados mediante ingeniería inversa (`security/oauth/token` e `info-session`). Esto permite al centro comenzar a operar sin migraciones previas de usuarios ni contraseñas adicionales, mientras que la gestión de incidencias, estados y fotografías reside de manera ágil y desacoplada en MongoDB Atlas.
