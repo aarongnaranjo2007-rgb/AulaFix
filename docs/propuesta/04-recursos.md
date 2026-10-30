@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Este documento detalla los recursos humanos, técnicos y organizativos necesarios para ejecutar el desarrollo de AULAFIX de forma coordinada, profesional y reproducible.
+Este documento detalla los recursos humanos, técnicos y organizativos necesarios para ejecutar el desarrollo de AulaFix de forma coordinada, profesional y reproducible.
 
 Define la distribución de responsabilidades técnicas y por módulo para los cuatro integrantes del equipo, formaliza los canales de comunicación, enlaza la arquitectura técnica aprobada en la fase 2 y establece la infraestructura de ramas y gestión de tareas que garantizará que cada línea de código llegue a producción mediante revisiones cruzadas obligatorias.
 
@@ -99,7 +99,7 @@ Tanto main como develop están configuradas en Settings → Branches con las sig
 El repositorio de AulaFix adopta una estructura de monorepositorio ligero desacoplado:
 
 ```text
-aulafix/
+AulaFix/
 ├── .github/
 │   └── workflows/              # Acciones automatizadas de GitHub Actions (tests y linter)
 ├── client/                     # Frontend (React 18 + Vite + Tailwind CSS)

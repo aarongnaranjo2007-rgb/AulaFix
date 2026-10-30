@@ -1,65 +1,84 @@
-# AULAFIX — Gestión de Incidencias Escolares
+# AulaFix — Sistema de Gestión de Incidencias Escolares
 
-	⁠Aplicación web progresiva (MERN) para el reporte, seguimiento y resolución ágil de averías materiales en centros educativos, autenticada mediante las credenciales oficiales de iPasen/Séneca.
+Aplicación web progresiva (MERN) para la notificación, trazabilidad y resolución de averías en centros educativos, autenticada mediante la pasarela de iPasen/Séneca.
 
-Desarrollado por *EquipoFaltador* en el marco de Optativa-Desarrollo de Aplicaciones Web Fullstack.
-
----
-
-## 📌 El Problema
-
-En los centros educativos, la comunicación de desperfectos (proyectores inoperativos, persianas trabadas, sanitarios averiados o fallos de red) se gestiona mediante cuadernos manuscritos en conserjería, notas adhesivas o avisos informales en pasillos. Esta falta de digitalización provoca pérdida de tiempo lectivo, saturación del personal de mantenimiento, quejas duplicadas y una ausencia absoluta de trazabilidad sobre el estado de las reparaciones.
-
-*AULAFIX* sustituye ese circuito analógico por una plataforma web móvil que permite a cualquier docente o alumno reportar una avería geolocalizada en menos de 30 segundos utilizando sus claves habituales de Séneca, al tiempo que proporciona a conserjería y coordinación TIC un cuadro de mandos interactivo para gestionar y cerrar los tickets en tiempo real.
+Proyecto desarrollado por EquipoFaltador dentro del módulo de Optativa-Desarrollo de Aplicaciones Web Fullstack
+.
 
 ---
 
-## 👥 Equipo de Desarrollo
+## 1. Justificación del Proyecto
 
-| Integrante | Rol Técnico | Responsabilidad Principal |
+En los centros educativos, la comunicación de deficiencias materiales (proyectores inoperativos, cerraduras deterioradas, incidencias de fontanería o averías en puestos de informática) se canaliza habitualmente mediante cuadernos manuscritos en conserjería, notas adhesivas o avisos verbales.
+
+Este flujo analógico provoca retrasos en las reparaciones, pérdida de tiempo lectivo, partes duplicados y una ausencia de trazabilidad sobre el estado de las intervenciones. AulaFix digitaliza este proceso permitiendo que el profesorado y el alumnado registren una avería geolocalizada en menos de 30 segundos utilizando sus credenciales oficiales de Séneca, facilitando al personal de mantenimiento un panel unificado para la gestión y cierre de tickets en tiempo real.
+
+---
+
+## 2. Equipo de Desarrollo
+
+| Miembro | Rol Técnico | Responsabilidad Principal |
 |---|---|---|
-| *Gabriel* | Backend Lead & API Architect | API REST en Express, proxy OAuth2 contra Séneca, seguridad JWT y endpoints de incidencias. |
-| *Alvaro* | Frontend Lead & UI/UX | Arquitectura React 18, stores de Zustand, diseño responsive con Tailwind CSS y accesibilidad móvil. |
-| *Aarón* | Database Manager & Security | Modelado de datos en MongoDB Atlas, optimización de consultas/índices y políticas RGPD. |
-| *David* | DevOps & QA Lead | Automatización CI/CD, configuración de entornos (Vercel/Render), suite de tests y control de PRs. |
+| Gabriel | Backend Lead & API Architect | API REST en Express, proxy OAuth2 contra Séneca y control de acceso mediante JWT. |
+| Álvaro | Frontend Lead & UI/UX | Arquitectura React 18, gestión del estado global con Zustand y diseño responsive con Tailwind CSS. |
+| Aarón | Database Manager & Security | Modelado de datos en MongoDB Atlas, optimización de consultas/índices y políticas de minimización RGPD. |
+| David | DevOps & QA Lead | Automatización CI/CD, despliegues (Vercel/Render), suite de tests y auditoría de Pull Requests. |
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 3. Arquitectura y Stack Tecnológico
 
-•⁠  ⁠*Frontend:* React 18, Vite, Tailwind CSS, Zustand, React Router DOM, Axios, Lucide React.
-•⁠  ⁠*Backend:* Node.js (v20 LTS), Express, Mongoose, JSON Web Tokens (JWT), Dotenv, Cors.
-•⁠  ⁠*Base de Datos:* MongoDB Atlas (M0 Sandbox, réplica europea en Frankfurt).
-•⁠  ⁠*Infraestructura de Despliegue:* Vercel (Frontend SPA) y Render (Backend Web Service).
-•⁠  ⁠*Autenticación Externa:* Endpoints OAuth2 de la API de iPasen (Junta de Andalucía).
-•⁠  ⁠*Testing & Calidad:* Vitest (Frontend), Jest + Supertest (Backend), ESLint y Prettier.
+- Frontend: React 18, Vite, Tailwind CSS, Zustand, React Router DOM, Axios y Lucide React.
+- Backend: Node.js (v20 LTS), Express, Mongoose, JSON Web Tokens (JWT), Dotenv y CORS.
+- Base de Datos: MongoDB Atlas (M0 Sandbox, réplica europea en Frankfurt).
+- Infraestructura de Despliegue: Vercel (Frontend SPA) y Render (Backend Web Service).
+- Autenticación Externa: Pasarela proxy contra la API de iPasen (Junta de Andalucía).
+- Calidad y Pruebas: Vitest (Frontend), Jest y Supertest (Backend), ESLint y Prettier.
 
 ---
 
-## 🚀 Cómo arrancarlo
+## 4. Instrucciones de Despliegue Local
 
-	⁠Instrucciones preliminares de configuración del entorno de desarrollo. La implementación funcional y ejecución del código se llevará a cabo durante la **UD1.
+Las dependencias e implementación funcional se desarrollarán a partir de la UD1.
 
 ### Requisitos previos
-•⁠  ⁠Node.js ⁠ >= 20.x.x ⁠ (gestionado preferiblemente mediante ⁠ nvm ⁠ ejecutando ⁠ nvm use ⁠).
-•⁠  ⁠Gestor de paquetes ⁠ npm ⁠.
-•⁠  ⁠Conexión a MongoDB Atlas o instancia local de MongoDB.
+- Node.js versión 20.x LTS o superior.
+- Gestor de paquetes npm.
+- Conexión a MongoDB Atlas o instancia local activa.
 
-### Puesta en marcha (Prevista para UD1)
+### Puesta en marcha
 
+1. Clonar el repositorio y situarse en la raíz:
 ```bash
-# 1. Clonar el repositorio y situarse en la raíz
-git clone https://github.com/aarongnaranjo2007-rgb/Aulafix.git
-cd Aulafix
+git clone https://github.com/aarongnaranjo2007-rgb/AulaFix.git
+cd AulaFix
+```
 
-# 2. Configuración y arranque del servidor (Backend)
+2. Configuración y ejecución del backend:
+```bash
 cd server
 npm install
 cp .env.example .env
 npm run dev
+```
 
-# 3. En una segunda terminal, configuración y arranque del cliente (Frontend)
+3. En una segunda terminal, configuración y ejecución del frontend:
+```bash
 cd ../client
 npm install
 cp .env.example .env
 npm run dev
+```
+
+---
+
+## 5. Documentación y Enlaces
+
+- Gestión del Proyecto: [Tablero de Tareas en GitHub Projects](https://github.com/aarongnaranjo2007-rgb/AulaFix/projects)
+- Acuerdos y Normas: [Contrato de Equipo (docs/CONTRATO.md)](./docs/CONTRATO.md)
+- Propuesta Técnica:
+  - [Fase 0: Brainstorming de Ideas (00-brainstorming.md)](./docs/propuesta/00-brainstorming.md)
+  - [Fase 1: Detección del Problema y User Personas (01-problema.md)](./docs/propuesta/01-problema.md)
+  - [Fase 2: Viabilidad Técnica y Definición del MVP (02-viabilidad-tecnica.md)](./docs/propuesta/02-viabilidad-tecnica.md)
+  - [Fase 3: Objetivos SMART y Alcance (03-objetivos-y-alcance.md)](./docs/propuesta/03-objetivos-y-alcance.md)
+  - [Fase 4: Recursos, Personas y Gestión (04-recursos.md)](./docs/propuesta/04-recursos.md)
