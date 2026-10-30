@@ -3,7 +3,7 @@
 Documento consolidado de propuesta técnica, alcance operativo y recursos para el desarrollo del sistema de incidencias escolares AulaFix.
 
 - Estudio de desarrollo: EquipoFaltador
-- Módulo: Proyecto Intermodular
+- Módulo: Optativa Desarrollo de Aplicaciones Web Fullstack
 - Integrantes y roles técnicos:
   - Gabriel: Backend Lead & API Architect
   - Álvaro: Frontend Lead & UI/UX
