@@ -1,4 +1,4 @@
-# AULAFIX — Backend (Server)
+# AulaFix — Backend (Server)
 
 API REST construida con Node.js y Express, con persistencia en MongoDB Atlas mediante Mongoose y pasarela proxy OAuth2 contra Séneca/iPasen.
 
