@@ -2,7 +2,8 @@
 
 Aplicación web progresiva (MERN) para la notificación, trazabilidad y resolución de averías en centros educativos, autenticada mediante la pasarela de iPasen/Séneca.
 
-Proyecto desarrollado por EquipoFaltador dentro del módulo de Proyecto Intermodular.
+Proyecto desarrollado por EquipoFaltador dentro del módulo de Optativa-Desarrollo de Aplicaciones Web Fullstack
+.
 
 ---
 
