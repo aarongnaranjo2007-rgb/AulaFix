@@ -1,10 +1,10 @@
-# AULAFIX — Detección del problema
+# AulaFix — Detección del problema
 
-AULAFIX es una aplicación web progresiva orientada a la comunidad educativa que permite *reportar, coordinar y resolver desperfectos e incidencias materiales en todo el centro educativo (aulas, pasillos, aseos, patios, pistas deportivas y zonas comunes) en menos de 30 segundos, validando la identidad mediante las credenciales oficiales de iPasen/Séneca*. No exige recordar contraseñas ni rellenar formularios interminables: el usuario inicia sesión con su identificador habitual y el sistema reconoce de inmediato su perfil (docente o alumnado), su centro escolar y su curso.
+AulaFix es una aplicación web progresiva orientada a la comunidad educativa que permite *reportar, coordinar y resolver desperfectos e incidencias materiales en todo el centro educativo (aulas, pasillos, aseos, patios, pistas deportivas y zonas comunes) en menos de 30 segundos, validando la identidad mediante las credenciales oficiales de iPasen/Séneca*. No exige recordar contraseñas ni rellenar formularios interminables: el usuario inicia sesión con su identificador habitual y el sistema reconoce de inmediato su perfil (docente o alumnado), su centro escolar y su curso.
 
 La idea surge de una realidad que paraliza a diario la actividad en institutos y centros de Formación Profesional: un grifo averiado inundando un aseo durante el recreo, un fluorescente parpadeando en la escalera principal, una canasta rota en el patio o el proyector de un aula sin señal de vídeo. Actualmente, para comunicar cualquiera de estos fallos se recurre a un libro físico de papel en conserjería, a enviar correos genéricos a secretaría o a detener a los conserjes y al coordinador TIC por los pasillos durante los cambios de clase. En la práctica, los avisos se traspapelan, nadie sabe si la avería está siendo atendida y las deficiencias permanecen sin reparar durante semanas.
 
-Cuando una instalación o recurso falla en el recinto escolar, hoy la respuesta es la improvisación, el deterioro acumulado de las instalaciones y la saturación del personal de mantenimiento. AULAFIX sustituye esa cadena rota por un flujo digital trazable y automático.
+Cuando una instalación o recurso falla en el recinto escolar, hoy la respuesta es la improvisación, el deterioro acumulado de las instalaciones y la saturación del personal de mantenimiento. AulaFix sustituye esa cadena rota por un flujo digital trazable y automático.
 
 ---
 
@@ -53,7 +53,7 @@ A partir de las respuestas extraídas de nuestro cuestionario y entrevistas de c
 
 ## 2. Las personas
 
-Tres personas reales de nuestro centro educativo con roles distintos frente al sistema. Sus respuestas al cuestionario justifican cada módulo y funcionalidad de AULAFIX.
+Tres personas reales de nuestro centro educativo con roles distintos frente al sistema. Sus respuestas al cuestionario justifican cada módulo y funcionalidad de AulaFix.
 
 ---
 
@@ -377,7 +377,7 @@ Cinco soluciones analizadas en el mercado y en la práctica educativa. Ninguna c
 
 ### Resumen comparativo
 
-| Característica | GLPI | Google Forms | Papel (Conserjería) | iPasen nativo | Jira / Zendesk | **AULAFIX (Nosotros)** |
+| Característica | GLPI | Google Forms | Papel (Conserjería) | iPasen nativo | Jira / Zendesk | **AulaFix (Nosotros)** |
 |---|---|---|---|---|---|---|
 | **Login educativo Séneca/iPasen** | No | No | No | Sí | No | **Sí** |
 | **Tiempo de reporte < 1 min** | No | Parcial | No | No | No | **Sí** |
@@ -404,10 +404,10 @@ Hoy utilizan cuadernos físicos en conserjería, correos dispersos a secretaría
 >
 > **Hoy usa** **el cuaderno de conserjería, correos electrónicos aislados o avisos verbales de pasillo**, que fallan en **la nula trazabilidad, la falta de información técnica sobre la avería y la duplicidad constante de reportes.**
 >
-> **AULAFIX ofrece** **una aplicación web ágil en stack MERN que permite reportar cualquier avería del centro en menos de 30 segundos iniciando sesión con las claves oficiales de Séneca/iPasen, adjuntando fotografía, geolocalizando el espacio y realizando el seguimiento del ticket en tiempo real hasta su resolución física.**
+> **AulaFix ofrece** **una aplicación web ágil en stack MERN que permite reportar cualquier avería del centro en menos de 30 segundos iniciando sesión con las claves oficiales de Séneca/iPasen, adjuntando fotografía, geolocalizando el espacio y realizando el seguimiento del ticket en tiempo real hasta su resolución física.**
 
 ### Diferenciación
 
-AULAFIX no pretende sustituir las competencias curriculares ni administrativas de Séneca, ni actuar como un ERP corporativo sobredimensionado para multinacionales. Su objetivo es resolver un problema físico urgente: *abrir, ubicar y atender un parte de avería en las instalaciones del centro en menos de medio minuto*.
+AulaFix no pretende sustituir las competencias curriculares ni administrativas de Séneca, ni actuar como un ERP corporativo sobredimensionado para multinacionales. Su objetivo es resolver un problema físico urgente: *abrir, ubicar y atender un parte de avería en las instalaciones del centro en menos de medio minuto*.
 
 El Producto Mínimo Viable (MVP) se apoya en un backend de Node.js y Express que valida las credenciales directamente contra los endpoints oficiales de iPasen analizados mediante ingeniería inversa (`security/oauth/token` e `info-session`). Esto permite al centro comenzar a operar sin migraciones previas de usuarios ni contraseñas adicionales, mientras que la gestión de incidencias, estados y fotografías reside de manera ágil y desacoplada en MongoDB Atlas.

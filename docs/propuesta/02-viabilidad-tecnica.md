@@ -93,7 +93,7 @@ Este recorrido se construye **única y exclusivamente con los 8 requisitos Must 
 ### Recorrido del MVP
 
 1. **Inicio de sesión y sincronización (Reqs. 1 y 2 — 15 segundos):**
-   - Carmen abre AULAFIX desde el navegador de su móvil y pulsa «Acceder con iPasen».
+   - Carmen abre AulaFix desde el navegador de su móvil y pulsa «Acceder con iPasen».
    - Introduce su usuario y contraseña habituales de Séneca. El backend valida contra la API institucional, detecta su rol (*Docente*) y sincroniza su ficha en la base de datos sin obligarla a rellenar ningún formulario de registro.
 
 2. **Selección de ubicación y categorización (Reqs. 4 y 5 — 10 segundos):**
@@ -106,7 +106,7 @@ Este recorrido se construye **única y exclusivamente con los 8 requisitos Must 
    - Pulsa **Enviar incidencia**. El ticket se registra en la base de datos y la imagen queda almacenada en el servicio multimedia.
 
 4. **Recepción y actualización de estado por mantenimiento (Req. 13 — 1 minuto):**
-   - Manuel (conserje) abre AULAFIX desde el ordenador de conserjería.
+   - Manuel (conserje) abre AulaFix desde el ordenador de conserjería.
    - En la bandeja de entrada ve una nueva tarjeta roja en estado *Pendiente* con la foto y la ubicación exacta que envió Carmen.
    - Manuel acude al aseo, corta la llave de paso para evitar inundaciones, vuelve al panel y cambia el estado a *En reparación*.
    - Una vez sustituida la zapata del grifo por el oficial de mantenimiento, Manuel hace clic en el ticket y selecciona el estado *Resuelta*.
@@ -151,7 +151,7 @@ Para el alcance del proyecto y su MVP **no necesitamos contratar servidores dedi
 
 - **Almacenamiento multimedia con Cloudinary (Plan Gratuito):** Es indispensable para no guardar fotos en base64 dentro de MongoDB (lo que saturaría los 512 MB de Atlas). El backend retransmite la imagen a Cloudinary y en la base de datos se guarda únicamente la URL pública segura resultante.
 - **Sin CDN de pago externa:** Vercel distribuye todos los assets estáticos del frontend de React a través de su propia red Edge global sin coste adicional.
-- **Sin pasarela de pagos:** AULAFIX es una plataforma de servicio público educativo sin cobros ni transacciones económicas.
+- **Sin pasarela de pagos:** AulaFix es una plataforma de servicio público educativo sin cobros ni transacciones económicas.
 - **Sin costes por la API de Séneca:** La autenticación se conecta a la infraestructura existente de la Junta de Andalucía descubierta por ingeniería inversa, sin requerir suscripciones a proveedores de identidad externos (como Auth0 o Firebase Auth).
 
 # Requisitos técnicos: backend y base de datos
@@ -304,6 +304,6 @@ Tecnologías y conceptos que debemos aprender o reforzar para construir el MVP y
 
 Con la fase 1 cerrada, toca responder la segunda pregunta: *¿podemos construirlo?*. La respuesta corta es sí; la larga está en este documento.
 
-El MVP de *AULAFIX* se apoya en cuatro pilares técnicos: un frontend en React con Tailwind CSS optimizado para su uso en smartphones en cualquier rincón del centro, un backend en Node.js y Express que actúa como pasarela contra la API de Séneca/iPasen emitiendo tokens JWT propios, una base de datos en MongoDB Atlas para persistir de forma estructurada los partes de averías y sus estados, y un servicio multimedia en Cloudinary para almacenar las fotos reales de los desperfectos. La lógica central es un ciclo de vida limpio y directo —reporte con ubicación y foto, inspección por el personal de mantenimiento y cambio de estado a resuelto—, lo que lo hace completamente viable para el tiempo disponible y las capacidades actuales del equipo.
+El MVP de *AulaFix* se apoya en cuatro pilares técnicos: un frontend en React con Tailwind CSS optimizado para su uso en smartphones en cualquier rincón del centro, un backend en Node.js y Express que actúa como pasarela contra la API de Séneca/iPasen emitiendo tokens JWT propios, una base de datos en MongoDB Atlas para persistir de forma estructurada los partes de averías y sus estados, y un servicio multimedia en Cloudinary para almacenar las fotos reales de los desperfectos. La lógica central es un ciclo de vida limpio y directo —reporte con ubicación y foto, inspección por el personal de mantenimiento y cambio de estado a resuelto—, lo que lo hace completamente viable para el tiempo disponible y las capacidades actuales del equipo.
 
 Este documento recoge los 18 requisitos funcionales priorizados con el método MoSCoW, las decisiones de frontend, backend, base de datos e infraestructura gratuita, la evaluación de habilidades del equipo y la matriz de riesgos técnicos con planes de mitigación previos. Lo que aquí se decide nos proporciona una base técnica sólida para empezar a programar y se podrá ajustar de forma controlada a medida que avance el desarrollo.
