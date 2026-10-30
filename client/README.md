@@ -1,4 +1,4 @@
-AULAFIX — Frontend (Client)
+AulaFix — Frontend (Client)
 
 Aplicación web progresiva construida con React 18 y Vite, estilizada con Tailwind CSS y gestionada con Zustand.
 
